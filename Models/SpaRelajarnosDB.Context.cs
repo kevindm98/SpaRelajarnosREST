@@ -40,5 +40,7 @@ namespace SpaRelajarnosREST.Models
         public virtual DbSet<Proveedor> Proveedors { get; set; }
         public virtual DbSet<Reserva> Reservas { get; set; }
         public virtual DbSet<Servicio> Servicios { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<TipoServicio> TipoServicios { get; set; }
     }
 }

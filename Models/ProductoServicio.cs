@@ -22,7 +22,6 @@ namespace SpaRelajarnosREST.Models
 
 		[JsonIgnore]
 		public virtual Producto Producto { get; set; }
-
 		[JsonIgnore]
 		public virtual Servicio Servicio { get; set; }
     }

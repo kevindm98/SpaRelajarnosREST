@@ -32,14 +32,11 @@ namespace SpaRelajarnosREST.Models
 
 		[JsonIgnore]
 		public virtual Cliente Cliente { get; set; }
-
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleReserva> DetalleReservas { get; set; }
-
 		[JsonIgnore]
 		public virtual Empleado Empleado { get; set; }
-
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Facturacion> Facturacions { get; set; }

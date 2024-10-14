@@ -77,5 +77,23 @@ namespace SpaRelajarnosREST.Clases
 				return ex.Message;
 			}
 		}
+
+		public IQueryable LlenarTabla()
+		{
+			return from s in db.Set<Servicio>()
+				   join ts in db.Set<TipoServicio>()
+				   on s.idTipoServicio equals ts.idTipoServicio
+				   orderby s.nombre, ts.nombre
+				   select new
+				   {
+					   Cod_TipoServicio = ts.idTipoServicio,
+					   Tipo_Servicio = ts.nombre,
+					   Codigo = s.idServicio,
+					   Servicio = s.nombre,
+					   Descripcion = s.descripcion,
+					   Precio = s.precioBase,
+					   Duracion_Servicio = s.duracionMinutos
+				   };
+		}
 	}
 }

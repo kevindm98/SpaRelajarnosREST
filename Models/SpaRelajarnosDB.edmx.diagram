@@ -36,6 +36,9 @@
         <AssociationConnector Association="SpaRelajarnosModel.FK__ProductoS__idSer__6754599E" ManuallyRouted="false" />
         <AssociationConnector Association="SpaRelajarnosModel.FK__Promocion__idPro__6383C8BA" ManuallyRouted="false" />
         <AssociationConnector Association="SpaRelajarnosModel.FK__Promocion__idSer__6477ECF3" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.sysdiagram" Width="1.5" PointX="5.375" PointY="4.5" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.TipoServicio" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Servicio__idTipo__7A672E12" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

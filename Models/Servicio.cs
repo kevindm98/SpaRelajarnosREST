@@ -29,21 +29,21 @@ namespace SpaRelajarnosREST.Models
         public string descripcion { get; set; }
         public decimal precioBase { get; set; }
         public int duracionMinutos { get; set; }
+        public Nullable<int> idTipoServicio { get; set; }
 
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleFactura> DetalleFacturas { get; set; }
-
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleReserva> DetalleReservas { get; set; }
-
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductoServicio> ProductoServicios { get; set; }
-
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PromocionServicio> PromocionServicios { get; set; }
+		[JsonIgnore]
+		public virtual TipoServicio TipoServicio { get; set; }
     }
 }

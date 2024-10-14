@@ -9,19 +9,15 @@
 
 namespace SpaRelajarnosREST.Models
 {
-	using Newtonsoft.Json;
-	using System;
+    using System;
     using System.Collections.Generic;
     
-    public partial class PromocionServicio
+    public partial class sysdiagram
     {
-        public int idPromocionServicio { get; set; }
-        public int idPromocion { get; set; }
-        public int idServicio { get; set; }
-
-		[JsonIgnore]
-		public virtual Promocion Promocion { get; set; }
-		[JsonIgnore]
-		public virtual Servicio Servicio { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
