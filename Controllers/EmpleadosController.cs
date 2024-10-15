@@ -49,5 +49,13 @@ namespace SpaRelajarnosREST.Controllers
 			empleado.empleado = Empleado;
 			return empleado.Eliminar();
 		}
-	}
+
+        [HttpGet]
+        [Route("ListarEmpleados")]
+        public IQueryable ListarEmpleados()
+        {
+            clsEmpleado _empleado = new clsEmpleado();
+            return _empleado.ListarEmpleados();
+        }
+    }
 }

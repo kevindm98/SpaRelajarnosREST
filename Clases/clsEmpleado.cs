@@ -77,6 +77,23 @@ namespace SpaRelajarnosREST.Clases
 				return ex.Message;
 			}
 		}
+        public IQueryable ListarEmpleados()
+        {	
+			return from E in db.Set<Empleado>()
+				   join EE in db.Set<EspecialidadEmpleado>()
+				   on E.documentoEmpleado equals EE.documentoEmpleado
+				   join Es in db.Set<Especialidad>()
+				   on EE.idEspecialidad equals Es.idEspecialidad
+				   orderby E.nombre
+                   select new
+                   {
+                       Documento = E.documentoEmpleado,
+                       Empleado = E.nombre + " " + E.apellido,
+                       Cargo = E.cargo,
+					   Salario = E.salario,
+                       Especialidad = Es.nombre  
+                   };
+        }
 
-	}
+    }
 }
