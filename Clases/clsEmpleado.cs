@@ -13,7 +13,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public Empleado empleado { get; set; }
 
-		public Empleado Consultar(int documento)
+        public Empleado Consultar(int documento)
 		{
 			return db.Empleadoes.FirstOrDefault(e => e.documentoEmpleado == documento);
 		}
@@ -93,6 +93,12 @@ namespace SpaRelajarnosREST.Clases
 					   Salario = E.salario,
                        Especialidad = Es.nombre  
                    };
+        }
+        public List<Especialidad> LlenarCombo()
+        {
+            return db.Especialidads
+                .OrderBy(ts => ts.nombre)
+                .ToList();
         }
 
     }

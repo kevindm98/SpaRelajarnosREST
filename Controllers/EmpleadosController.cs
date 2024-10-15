@@ -57,5 +57,12 @@ namespace SpaRelajarnosREST.Controllers
             clsEmpleado _empleado = new clsEmpleado();
             return _empleado.ListarEmpleados();
         }
+        [HttpGet]
+        [Route("LlenarCombo")]
+        public List<Especialidad> LlenarCombo()
+        {
+            clsEmpleado especialidad = new clsEmpleado();
+            return especialidad.LlenarCombo();
+        }
     }
 }
