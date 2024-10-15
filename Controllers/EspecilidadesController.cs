@@ -49,5 +49,12 @@ namespace SpaRelajarnosREST.Controllers
 			especialidad.especialidad = Especialidad;
 			return especialidad.Eliminar();
 		}
-	}
+        [HttpGet]
+        [Route("ListarEspecialidad")]
+        public IQueryable ListarEspecialidad()
+        {
+            clsEspecialidad _especialidad = new clsEspecialidad();
+            return _especialidad.ListarEspecialidad();
+        }
+    }
 }

@@ -77,5 +77,15 @@ namespace SpaRelajarnosREST.Clases
 				return ex.Message;
 			}
 		}
-	}
+        public IQueryable ListarEspecialidad()
+        {
+			return from Es in db.Set<Especialidad>()
+				   select new
+				   {
+					   ID = Es.idEspecialidad,
+					   Nombre = Es.nombre
+                       
+                   };
+        }
+    }
 }
