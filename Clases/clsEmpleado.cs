@@ -13,15 +13,20 @@ namespace SpaRelajarnosREST.Clases
 
 		public Empleado empleado { get; set; }
 
-        public Empleado Consultar(int documento)
+
+		public Empleado Consultar(int documento)
 		{
 			return db.Empleadoes.FirstOrDefault(e => e.documentoEmpleado == documento);
 		}
 
-		public string Insertar()
+		public string Insertar(int idEspecialidad)
 		{
 			try
 			{
+				EspecialidadEmpleado especialidadEmpleado = new EspecialidadEmpleado();
+				especialidadEmpleado.idEspecialidad = idEspecialidad;
+				especialidadEmpleado.documentoEmpleado = empleado.documentoEmpleado;
+				db.EspecialidadEmpleadoes.Add(especialidadEmpleado);
 				db.Empleadoes.Add(empleado);
 				db.SaveChanges();
 				return "Empleado insertado satisfactoriamente";
@@ -94,12 +99,12 @@ namespace SpaRelajarnosREST.Clases
                        Especialidad = Es.nombre  
                    };
         }
-        public List<Especialidad> LlenarCombo()
-        {
-            return db.Especialidads
-                .OrderBy(ts => ts.nombre)
-                .ToList();
-        }
+		public List<Especialidad> LlenarCombo()
+		{
+			return db.Especialidads
+				.OrderBy(ts => ts.nombre)
+				.ToList();
+		}
 
-    }
+	}
 }

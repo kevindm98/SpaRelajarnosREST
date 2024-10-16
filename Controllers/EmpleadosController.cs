@@ -25,11 +25,11 @@ namespace SpaRelajarnosREST.Controllers
 
 		[HttpPost]
 		[Route("Insertar")]
-		public string Insertar([FromBody] Empleado Empleado)
+		public string Insertar([FromBody] Empleado Empleado, int idEspecialidad)
 		{
 			clsEmpleado empleado = new clsEmpleado();
 			empleado.empleado = Empleado;
-			return empleado.Insertar();
+			return empleado.Insertar(idEspecialidad);
 		}
 
 		[HttpPut]
@@ -57,12 +57,12 @@ namespace SpaRelajarnosREST.Controllers
             clsEmpleado _empleado = new clsEmpleado();
             return _empleado.ListarEmpleados();
         }
-        [HttpGet]
-        [Route("LlenarCombo")]
-        public List<Especialidad> LlenarCombo()
-        {
-            clsEmpleado especialidad = new clsEmpleado();
-            return especialidad.LlenarCombo();
-        }
-    }
+		[HttpGet]
+		[Route("LlenarCombo")]
+		public List<Especialidad> LlenarCombo()
+		{
+			clsEmpleado especialidad = new clsEmpleado();
+			return especialidad.LlenarCombo();
+		}
+	}
 }

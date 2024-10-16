@@ -58,11 +58,11 @@
         </EntityType>
         <EntityType Name="EspecialidadEmpleado">
           <Key>
-            <PropertyRef Name="idEspecialidadEmpleado" />
+            <PropertyRef Name="idEE" />
           </Key>
-          <Property Name="idEspecialidadEmpleado" Type="int" Nullable="false" />
           <Property Name="idEspecialidad" Type="int" />
           <Property Name="documentoEmpleado" Type="int" />
+          <Property Name="idEE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Facturacion">
           <Key>
@@ -530,13 +530,13 @@
         </EntityType>
         <EntityType Name="EspecialidadEmpleado">
           <Key>
-            <PropertyRef Name="idEspecialidadEmpleado" />
+            <PropertyRef Name="idEE" />
           </Key>
-          <Property Name="idEspecialidadEmpleado" Type="Int32" Nullable="false" />
           <Property Name="idEspecialidad" Type="Int32" />
           <Property Name="documentoEmpleado" Type="Int32" />
           <NavigationProperty Name="Empleado" Relationship="Self.FK__Especiali__docum__45F365D3" FromRole="EspecialidadEmpleado" ToRole="Empleado" />
           <NavigationProperty Name="Especialidad" Relationship="Self.FK__Especiali__idEsp__46E78A0C" FromRole="EspecialidadEmpleado" ToRole="Especialidad" />
+          <Property Name="idEE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="Facturacion">
           <Key>
@@ -1024,7 +1024,7 @@
           <EntitySetMapping Name="EspecialidadEmpleadoes">
             <EntityTypeMapping TypeName="SpaRelajarnosModel.EspecialidadEmpleado">
               <MappingFragment StoreEntitySet="EspecialidadEmpleado">
-                <ScalarProperty Name="idEspecialidadEmpleado" ColumnName="idEspecialidadEmpleado" />
+                <ScalarProperty Name="idEE" ColumnName="idEE" />
                 <ScalarProperty Name="idEspecialidad" ColumnName="idEspecialidad" />
                 <ScalarProperty Name="documentoEmpleado" ColumnName="documentoEmpleado" />
               </MappingFragment>
