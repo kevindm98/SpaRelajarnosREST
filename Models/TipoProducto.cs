@@ -13,13 +13,19 @@ namespace SpaRelajarnosREST.Models
 	using System;
     using System.Collections.Generic;
     
-    public partial class Nomina
+    public partial class TipoProducto
     {
-        public int idNomina { get; set; }
-        public int documentoEmpleado { get; set; }
-        public decimal total { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TipoProducto()
+        {
+            this.Productoes = new HashSet<Producto>();
+        }
+    
+        public int Id { get; set; }
+        public string Nombre { get; set; }
 
 		[JsonIgnore]
-		public virtual Empleado Empleado { get; set; }
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Producto> Productoes { get; set; }
     }
 }

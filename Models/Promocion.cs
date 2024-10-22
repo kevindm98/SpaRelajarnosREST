@@ -21,11 +21,11 @@ namespace SpaRelajarnosREST.Models
             this.PromocionServicios = new HashSet<PromocionServicio>();
         }
     
-        public int idPromocion { get; set; }
-        public string nombre { get; set; }
-        public decimal descuento { get; set; }
-        public System.DateTime fechaInicio { get; set; }
-        public System.DateTime fechaFin { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public Nullable<int> Descuento { get; set; }
+        public Nullable<System.DateTime> FechaInicio { get; set; }
+        public Nullable<System.DateTime> FechaFinal { get; set; }
 
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

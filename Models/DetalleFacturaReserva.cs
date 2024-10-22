@@ -13,16 +13,15 @@ namespace SpaRelajarnosREST.Models
 	using System;
     using System.Collections.Generic;
     
-    public partial class DetalleFactura
+    public partial class DetalleFacturaReserva
     {
-        public int idDetalleFactura { get; set; }
-        public int idFactura { get; set; }
-        public int idServicio { get; set; }
-        public int cantidad { get; set; }
-        public decimal subtotal { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> Cantidad { get; set; }
+        public Nullable<int> IdReserva { get; set; }
+        public Nullable<int> IdServicio { get; set; }
 
 		[JsonIgnore]
-		public virtual Facturacion Facturacion { get; set; }
+		public virtual Reserva Reserva { get; set; }
 		[JsonIgnore]
 		public virtual Servicio Servicio { get; set; }
     }

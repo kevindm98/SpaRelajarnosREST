@@ -25,22 +25,25 @@ namespace SpaRelajarnosREST.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Cargo> Cargoes { get; set; }
+        public virtual DbSet<Ciudad> Ciudads { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
-        public virtual DbSet<DetalleFactura> DetalleFacturas { get; set; }
-        public virtual DbSet<DetalleReserva> DetalleReservas { get; set; }
+        public virtual DbSet<DetalleFacturaProducto> DetalleFacturaProductoes { get; set; }
+        public virtual DbSet<DetalleFacturaReserva> DetalleFacturaReservas { get; set; }
         public virtual DbSet<Empleado> Empleadoes { get; set; }
         public virtual DbSet<Especialidad> Especialidads { get; set; }
         public virtual DbSet<EspecialidadEmpleado> EspecialidadEmpleadoes { get; set; }
-        public virtual DbSet<Facturacion> Facturacions { get; set; }
-        public virtual DbSet<Nomina> Nominas { get; set; }
+        public virtual DbSet<Estado> Estadoes { get; set; }
+        public virtual DbSet<FacturaProducto> FacturaProductoes { get; set; }
+        public virtual DbSet<FacturaReserva> FacturaReservas { get; set; }
+        public virtual DbSet<MetodoPago> MetodoPagoes { get; set; }
         public virtual DbSet<Producto> Productoes { get; set; }
-        public virtual DbSet<ProductoServicio> ProductoServicios { get; set; }
         public virtual DbSet<Promocion> Promocions { get; set; }
         public virtual DbSet<PromocionServicio> PromocionServicios { get; set; }
-        public virtual DbSet<Proveedor> Proveedors { get; set; }
         public virtual DbSet<Reserva> Reservas { get; set; }
+        public virtual DbSet<Sede> Sedes { get; set; }
         public virtual DbSet<Servicio> Servicios { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<TipoProducto> TipoProductoes { get; set; }
         public virtual DbSet<TipoServicio> TipoServicios { get; set; }
     }
 }

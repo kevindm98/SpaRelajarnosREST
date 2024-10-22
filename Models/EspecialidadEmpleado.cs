@@ -9,16 +9,19 @@
 
 namespace SpaRelajarnosREST.Models
 {
-    using System;
+	using Newtonsoft.Json;
+	using System;
     using System.Collections.Generic;
     
     public partial class EspecialidadEmpleado
     {
-        public Nullable<int> idEspecialidad { get; set; }
-        public Nullable<int> documentoEmpleado { get; set; }
-        public int idEE { get; set; }
-    
-        public virtual Empleado Empleado { get; set; }
-        public virtual Especialidad Especialidad { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> IdEspecialidad { get; set; }
+        public Nullable<int> IdEmpleado { get; set; }
+
+		[JsonIgnore]
+		public virtual Empleado Empleado { get; set; }
+		[JsonIgnore]
+		public virtual Especialidad Especialidad { get; set; }
     }
 }

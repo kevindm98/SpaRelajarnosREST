@@ -6,15 +6,15 @@ using System.Web;
 
 namespace SpaRelajarnosREST.Clases
 {
-	public class clsTipoServicio
+	public class clsTipoProducto
 	{
 		private SpaRelajarnosEntities db = new SpaRelajarnosEntities();
 
-		public clsTipoServicio tipoServicio { get; set; }
+		public clsTipoProducto tipoProducto { get; set; }
 
-		public List<TipoServicio> LlenarCombo()
+		public List<TipoProducto> LlenarCombo()
 		{
-			return db.TipoServicios
+			return db.TipoProductoes
 				.OrderBy(ts => ts.Nombre)
 				.ToList();
 		}

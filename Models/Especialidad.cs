@@ -21,8 +21,8 @@ namespace SpaRelajarnosREST.Models
             this.EspecialidadEmpleadoes = new HashSet<EspecialidadEmpleado>();
         }
     
-        public int idEspecialidad { get; set; }
-        public string nombre { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
 
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

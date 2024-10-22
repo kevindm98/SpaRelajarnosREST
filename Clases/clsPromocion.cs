@@ -15,7 +15,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public Promocion Consultar(int id)
 		{
-			return db.Promocions.FirstOrDefault(p => p.idPromocion == id);
+			return db.Promocions.FirstOrDefault(p => p.Id == id);
 		}
 
 		public string Insertar()
@@ -34,7 +34,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Actualizar()
 		{
-			Promocion _promocion = Consultar(promocion.idPromocion);
+			Promocion _promocion = Consultar(promocion.Id);
 
 			try
 			{
@@ -57,7 +57,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Eliminar()
 		{
-			Promocion _promocion = Consultar(promocion.idPromocion);
+			Promocion _promocion = Consultar(promocion.Id);
 
 			try
 			{

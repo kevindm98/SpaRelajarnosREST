@@ -13,23 +13,23 @@ namespace SpaRelajarnosREST.Models
 	using System;
     using System.Collections.Generic;
     
-    public partial class Proveedor
+    public partial class MetodoPago
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Proveedor()
+        public MetodoPago()
         {
-            this.Productoes = new HashSet<Producto>();
+            this.FacturaProductoes = new HashSet<FacturaProducto>();
+            this.FacturaReservas = new HashSet<FacturaReserva>();
         }
     
-        public int idProveedor { get; set; }
-        public string nombre { get; set; }
-        public string contacto { get; set; }
-        public string telefono { get; set; }
-        public string email { get; set; }
-        public string direccion { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
 
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Producto> Productoes { get; set; }
+        public virtual ICollection<FacturaProducto> FacturaProductoes { get; set; }
+		[JsonIgnore]
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FacturaReserva> FacturaReservas { get; set; }
     }
 }

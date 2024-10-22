@@ -19,27 +19,26 @@ namespace SpaRelajarnosREST.Models
         public Empleado()
         {
             this.EspecialidadEmpleadoes = new HashSet<EspecialidadEmpleado>();
-            this.Nominas = new HashSet<Nomina>();
-            this.Reservas = new HashSet<Reserva>();
         }
     
-        public int documentoEmpleado { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public string telefono { get; set; }
-        public string email { get; set; }
-        public string cargo { get; set; }
-        public System.DateTime fechaContratacion { get; set; }
-        public decimal salario { get; set; }
+        public int Id { get; set; }
+        public string Documento { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public Nullable<int> Telefono { get; set; }
+        public string Correo { get; set; }
+        public string Direccion { get; set; }
+        public Nullable<System.DateTime> FechaContratación { get; set; }
+        public Nullable<decimal> Salario { get; set; }
+        public Nullable<int> IdCargo { get; set; }
+        public Nullable<int> IdSede { get; set; }
 
+		[JsonIgnore]
+		public virtual Cargo Cargo { get; set; }
+		[JsonIgnore]
+		public virtual Sede Sede { get; set; }
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EspecialidadEmpleado> EspecialidadEmpleadoes { get; set; }
-		[JsonIgnore]
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Nomina> Nominas { get; set; }
-		[JsonIgnore]
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reserva> Reservas { get; set; }
     }
 }

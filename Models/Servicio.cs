@@ -18,28 +18,20 @@ namespace SpaRelajarnosREST.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Servicio()
         {
-            this.DetalleFacturas = new HashSet<DetalleFactura>();
-            this.DetalleReservas = new HashSet<DetalleReserva>();
-            this.ProductoServicios = new HashSet<ProductoServicio>();
+            this.DetalleFacturaReservas = new HashSet<DetalleFacturaReserva>();
             this.PromocionServicios = new HashSet<PromocionServicio>();
         }
     
-        public int idServicio { get; set; }
-        public string nombre { get; set; }
-        public string descripcion { get; set; }
-        public decimal precioBase { get; set; }
-        public int duracionMinutos { get; set; }
-        public Nullable<int> idTipoServicio { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public Nullable<decimal> Precio { get; set; }
+        public Nullable<int> DuracionMinutos { get; set; }
+        public Nullable<int> IdTipoServicio { get; set; }
 
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleFactura> DetalleFacturas { get; set; }
-		[JsonIgnore]
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleReserva> DetalleReservas { get; set; }
-		[JsonIgnore]
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductoServicio> ProductoServicios { get; set; }
+        public virtual ICollection<DetalleFacturaReserva> DetalleFacturaReservas { get; set; }
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PromocionServicio> PromocionServicios { get; set; }

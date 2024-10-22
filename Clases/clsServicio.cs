@@ -15,7 +15,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public Servicio Consultar(int id)
 		{
-			return db.Servicios.FirstOrDefault(s => s.idServicio == id);
+			return db.Servicios.FirstOrDefault(s => s.Id == id);
 		}
 
 		public string Insertar()
@@ -34,7 +34,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Actualizar()
 		{
-			Servicio _servicio = Consultar(servicio.idServicio);
+			Servicio _servicio = Consultar(servicio.Id);
 
 			try
 			{
@@ -57,7 +57,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Eliminar()
 		{
-			Servicio _servicio = Consultar(servicio.idServicio);
+			Servicio _servicio = Consultar(servicio.Id);
 
 			try
 			{
@@ -82,17 +82,17 @@ namespace SpaRelajarnosREST.Clases
 		{
 			return from s in db.Set<Servicio>()
 				   join ts in db.Set<TipoServicio>()
-				   on s.idTipoServicio equals ts.idTipoServicio
-				   orderby s.nombre, ts.nombre
+				   on s.Id equals ts.Id
+				   orderby s.Nombre, ts.Nombre
 				   select new
 				   {
-					   Cod_TipoServicio = ts.idTipoServicio,
-					   Tipo_Servicio = ts.nombre,
-					   Codigo = s.idServicio,
-					   Servicio = s.nombre,
-					   Descripcion = s.descripcion,
-					   Precio = s.precioBase,
-					   Duracion_Servicio = s.duracionMinutos
+					   Cod_TipoServicio = ts.Id,
+					   Tipo_Servicio = ts.Nombre,
+					   Codigo = s.Id,
+					   Servicio = s.Nombre,
+					   Descripcion = s.Descripcion,
+					   Precio = s.Precio,
+					   Duracion_Servicio = s.DuracionMinutos
 				   };
 		}
 	}

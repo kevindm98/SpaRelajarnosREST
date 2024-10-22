@@ -15,7 +15,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public Reserva Consultar(int id)
 		{
-			return db.Reservas.FirstOrDefault(r => r.idReserva == id);
+			return db.Reservas.FirstOrDefault(r => r.Id == id);
 		}
 
 		public string Insertar()
@@ -34,7 +34,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Actualizar()
 		{
-			Reserva _reserva = Consultar(reserva.idReserva);
+			Reserva _reserva = Consultar(reserva.Id);
 
 			try
 			{
@@ -57,7 +57,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Eliminar()
 		{
-			Reserva _reserva = Consultar(reserva.idReserva);
+			Reserva _reserva = Consultar(reserva.Id);
 
 			try
 			{

@@ -18,20 +18,18 @@ namespace SpaRelajarnosREST.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Producto()
         {
-            this.ProductoServicios = new HashSet<ProductoServicio>();
+            this.DetalleFacturaProductoes = new HashSet<DetalleFacturaProducto>();
         }
     
-        public int idProducto { get; set; }
-        public string nombre { get; set; }
-        public string descripcion { get; set; }
-        public int cantidad { get; set; }
-        public decimal precioUnitario { get; set; }
-        public Nullable<int> idProveedor { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public Nullable<decimal> Precio { get; set; }
+        public Nullable<int> IdTipoProducto { get; set; }
 
 		[JsonIgnore]
-		public virtual Proveedor Proveedor { get; set; }
-		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductoServicio> ProductoServicios { get; set; }
+        public virtual ICollection<DetalleFacturaProducto> DetalleFacturaProductoes { get; set; }
+		[JsonIgnore]
+		public virtual TipoProducto TipoProducto { get; set; }
     }
 }

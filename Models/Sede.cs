@@ -13,27 +13,24 @@ namespace SpaRelajarnosREST.Models
 	using System;
     using System.Collections.Generic;
     
-    public partial class Cliente
+    public partial class Sede
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cliente()
+        public Sede()
         {
-            this.FacturaProductoes = new HashSet<FacturaProducto>();
+            this.Empleadoes = new HashSet<Empleado>();
             this.Reservas = new HashSet<Reserva>();
         }
     
         public int Id { get; set; }
-        public string Documento { get; set; }
         public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public Nullable<int> Telefono { get; set; }
-        public string Correo { get; set; }
         public string Direccion { get; set; }
-        public Nullable<System.DateTime> FechaRegistro { get; set; }
+        public Nullable<int> IdCiudad { get; set; }
 
 		[JsonIgnore]
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FacturaProducto> FacturaProductoes { get; set; }
+		public virtual Ciudad Ciudad { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Empleado> Empleadoes { get; set; }
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reserva> Reservas { get; set; }

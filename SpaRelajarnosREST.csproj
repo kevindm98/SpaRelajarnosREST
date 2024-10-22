@@ -179,40 +179,58 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Clases\clsCargo.cs" />
+    <Compile Include="Clases\clsCiudad.cs" />
     <Compile Include="Clases\clsCliente.cs" />
     <Compile Include="Clases\clsEmpleado.cs" />
     <Compile Include="Clases\clsEspecialidad.cs" />
-    <Compile Include="Clases\clsFacturacion.cs" />
-    <Compile Include="Clases\clsNomina.cs" />
+    <Compile Include="Clases\clsEstado.cs" />
+    <Compile Include="Clases\clsFacturaProducto.cs" />
+    <Compile Include="Clases\clsFacturaReserva.cs" />
+    <Compile Include="Clases\clsMetodoPago.cs" />
     <Compile Include="Clases\clsProducto.cs" />
     <Compile Include="Clases\clsPromocion.cs" />
-    <Compile Include="Clases\clsProveedor.cs" />
     <Compile Include="Clases\clsReserva.cs" />
+    <Compile Include="Clases\clsSede.cs" />
     <Compile Include="Clases\clsServicio.cs" />
+    <Compile Include="Clases\clsTipoProducto.cs" />
     <Compile Include="Clases\clsTipoServicio.cs" />
+    <Compile Include="Controllers\CargosController.cs" />
+    <Compile Include="Controllers\CiudadesController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\EspecilidadesController.cs" />
-    <Compile Include="Controllers\FacturacionesController.cs" />
+    <Compile Include="Controllers\EstadosController.cs" />
+    <Compile Include="Controllers\FacturaProductosController.cs" />
+    <Compile Include="Controllers\FacturaReservasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MetodoPagosController.cs" />
     <Compile Include="Controllers\NominasController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\PromocionesController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
     <Compile Include="Controllers\ReservasController.cs" />
+    <Compile Include="Controllers\SedesController.cs" />
     <Compile Include="Controllers\ServiciosController.cs" />
+    <Compile Include="Controllers\TipoProductosController.cs" />
     <Compile Include="Controllers\TipoServiciosController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cargo.cs">
+      <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ciudad.cs">
+      <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Cliente.cs">
       <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DetalleFactura.cs">
+    <Compile Include="Models\DetalleFacturaProducto.cs">
       <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DetalleReserva.cs">
+    <Compile Include="Models\DetalleFacturaReserva.cs">
       <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Empleado.cs">
@@ -224,16 +242,19 @@
     <Compile Include="Models\EspecialidadEmpleado.cs">
       <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Facturacion.cs">
+    <Compile Include="Models\Estado.cs">
       <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Nomina.cs">
+    <Compile Include="Models\FacturaProducto.cs">
+      <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FacturaReserva.cs">
+      <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MetodoPago.cs">
       <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Producto.cs">
-      <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductoServicio.cs">
       <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Promocion.cs">
@@ -242,10 +263,10 @@
     <Compile Include="Models\PromocionServicio.cs">
       <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Proveedor.cs">
+    <Compile Include="Models\Reserva.cs">
       <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Reserva.cs">
+    <Compile Include="Models\Sede.cs">
       <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Servicio.cs">
@@ -266,7 +287,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SpaRelajarnosDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
+    <Compile Include="Models\TipoProducto.cs">
       <DependentUpon>SpaRelajarnosDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TipoServicio.cs">
@@ -294,23 +315,6 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Models\SpaRelajarnosDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SpaRelajarnosDB.Context.cs</LastGenOutput>
-      <DependentUpon>SpaRelajarnosDB.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\SpaRelajarnosDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SpaRelajarnosDB.edmx</DependentUpon>
-      <LastGenOutput>SpaRelajarnosDB.cs</LastGenOutput>
-    </Content>
-    <EntityDeploy Include="Models\SpaRelajarnosDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SpaRelajarnosDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\SpaRelajarnosDB.edmx.diagram">
-      <DependentUpon>SpaRelajarnosDB.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
@@ -330,12 +334,29 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Models\SpaRelajarnosDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpaRelajarnosDB.edmx</DependentUpon>
+      <LastGenOutput>SpaRelajarnosDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SpaRelajarnosDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpaRelajarnosDB.edmx</DependentUpon>
+      <LastGenOutput>SpaRelajarnosDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\SpaRelajarnosDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SpaRelajarnosDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SpaRelajarnosDB.edmx.diagram">
+      <DependentUpon>SpaRelajarnosDB.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />

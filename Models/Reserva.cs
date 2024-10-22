@@ -18,27 +18,29 @@ namespace SpaRelajarnosREST.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Reserva()
         {
-            this.DetalleReservas = new HashSet<DetalleReserva>();
-            this.Facturacions = new HashSet<Facturacion>();
+            this.DetalleFacturaReservas = new HashSet<DetalleFacturaReserva>();
+            this.FacturaReservas = new HashSet<FacturaReserva>();
         }
     
-        public int idReserva { get; set; }
-        public int documentoCliente { get; set; }
-        public System.DateTime fechaReserva { get; set; }
-        public System.TimeSpan horaReserva { get; set; }
-        public int duracion { get; set; }
-        public Nullable<int> documentoEmpleado { get; set; }
-        public string estado { get; set; }
+        public int Id { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
+        public Nullable<System.TimeSpan> Hora { get; set; }
+        public Nullable<int> Duracion { get; set; }
+        public Nullable<int> IdCliente { get; set; }
+        public Nullable<int> IdSede { get; set; }
+        public Nullable<int> IdEstado { get; set; }
 
 		[JsonIgnore]
 		public virtual Cliente Cliente { get; set; }
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleReserva> DetalleReservas { get; set; }
+        public virtual ICollection<DetalleFacturaReserva> DetalleFacturaReservas { get; set; }
 		[JsonIgnore]
-		public virtual Empleado Empleado { get; set; }
+		public virtual Estado Estado { get; set; }
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Facturacion> Facturacions { get; set; }
+        public virtual ICollection<FacturaReserva> FacturaReservas { get; set; }
+		[JsonIgnore]
+		public virtual Sede Sede { get; set; }
     }
 }

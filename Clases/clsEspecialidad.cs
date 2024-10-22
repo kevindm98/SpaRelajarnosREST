@@ -13,9 +13,9 @@ namespace SpaRelajarnosREST.Clases
 
 		public Especialidad especialidad { get; set; }
 
-		public Especialidad Consultar(int id)
+		public Especialidad Consultar(int Id)
 		{
-			return db.Especialidads.FirstOrDefault(e => e.idEspecialidad == id);
+			return db.Especialidads.FirstOrDefault(e => e.Id == Id);
 		}
 
 		public string Insertar()
@@ -34,7 +34,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Actualizar()
 		{
-			Especialidad _especialidad = Consultar(especialidad.idEspecialidad);
+			Especialidad _especialidad = Consultar(especialidad.Id);
 
 			try
 			{
@@ -57,7 +57,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Eliminar()
 		{
-			Especialidad _especialidad = Consultar(especialidad.idEspecialidad);
+			Especialidad _especialidad = Consultar(especialidad.Id);
 
 			try
 			{
@@ -82,8 +82,8 @@ namespace SpaRelajarnosREST.Clases
 			return from Es in db.Set<Especialidad>()
 				   select new
 				   {
-					   ID = Es.idEspecialidad,
-					   Nombre = Es.nombre
+					   ID = Es.Id,
+					   Nombre = Es.Nombre
                        
                    };
         }

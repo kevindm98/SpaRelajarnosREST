@@ -21,11 +21,11 @@ namespace SpaRelajarnosREST.Models
             this.Servicios = new HashSet<Servicio>();
         }
     
-        public int idTipoServicio { get; set; }
-        public string nombre { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
 
-        [JsonIgnore]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+		[JsonIgnore]
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Servicio> Servicios { get; set; }
     }
 }

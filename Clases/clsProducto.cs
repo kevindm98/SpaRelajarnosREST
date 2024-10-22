@@ -15,7 +15,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public Producto Consultar(int id)
 		{
-			return db.Productoes.FirstOrDefault(p => p.idProducto == id);
+			return db.Productoes.FirstOrDefault(p => p.Id == id);
 		}
 
 		public string Insertar()
@@ -34,7 +34,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Actualizar()
 		{
-			Producto _producto = Consultar(producto.idProducto);
+			Producto _producto = Consultar(producto.Id);
 
 			try
 			{
@@ -57,7 +57,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Eliminar()
 		{
-			Producto _producto = Consultar(producto.idProducto);
+			Producto _producto = Consultar(producto.Id);
 
 			try
 			{

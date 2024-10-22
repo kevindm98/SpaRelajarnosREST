@@ -7,22 +7,22 @@ using System.Web;
 
 namespace SpaRelajarnosREST.Clases
 {
-	public class clsFacturacion
+	public class clsFacturaReserva
 	{
 		private SpaRelajarnosEntities db = new SpaRelajarnosEntities();
 
-		public Facturacion facturacion { get; set; }
+		public FacturaReserva facturaReserva { get; set; }
 
-		public Facturacion Consultar(int id)
+		public FacturaReserva Consultar(int id)
 		{
-			return db.Facturacions.FirstOrDefault(f => f.idFactura == id);
+			return db.FacturaReservas.FirstOrDefault(f => f.Id == id);
 		}
 
 		public string Insertar()
 		{
 			try
 			{
-				db.Facturacions.Add(facturacion);
+				db.FacturaReservas.Add(facturaReserva);
 				db.SaveChanges();
 				return "Factura insertada satisfactoriamente";
 			}
@@ -34,13 +34,13 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Actualizar()
 		{
-			Facturacion _facturacion = Consultar(facturacion.idFactura);
+			FacturaReserva _factura = Consultar(facturaReserva.Id);
 
 			try
 			{
-				if (_facturacion != null)
+				if (_factura != null)
 				{
-					db.Facturacions.AddOrUpdate(facturacion);
+					db.FacturaReservas.AddOrUpdate(facturaReserva);
 					db.SaveChanges();
 					return "Factura actualizada satisfactoriamente";
 				}
@@ -57,13 +57,13 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Eliminar()
 		{
-			Facturacion _facturacion = Consultar(facturacion.idFactura);
+			FacturaReserva _factura = Consultar(facturaReserva.Id);
 
 			try
 			{
-				if (_facturacion != null)
+				if (_factura != null)
 				{
-					db.Facturacions.Remove(_facturacion);
+					db.FacturaReservas.Remove(_factura);
 					db.SaveChanges();
 					return "Factura eliminada satisfactoriamente";
 				}
