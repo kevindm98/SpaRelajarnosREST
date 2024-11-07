@@ -13,17 +13,16 @@ namespace SpaRelajarnosREST.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class FacturaReserva
+    public partial class Usuario_Perfil
     {
         public int Id { get; set; }
-        public Nullable<System.DateTime> FechaEmision { get; set; }
-        public Nullable<int> IdMetodoPago { get; set; }
-        public Nullable<int> IdReserva { get; set; }
-        public Nullable<decimal> Total { get; set; }
+        public Nullable<int> IdUsuario { get; set; }
+        public Nullable<int> IdPerfil { get; set; }
+        public Nullable<bool> Activo { get; set; }
 
         [JsonIgnore]
-        public virtual MetodoPago MetodoPago { get; set; }
+        public virtual Perfil Perfil { get; set; }
         [JsonIgnore]
-        public virtual Reserva Reserva { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

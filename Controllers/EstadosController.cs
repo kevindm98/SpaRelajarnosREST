@@ -16,7 +16,7 @@ namespace SpaRelajarnosREST.Controllers
 	{
 		[HttpGet]
 		[Route("LlenarCombo")]
-		public List<Cargo> LlenarCombo()
+		public List<Estado> LlenarCombo()
 		{
 			clsEstado estado = new clsEstado();
 			return estado.LlenarCombo();

@@ -13,17 +13,20 @@ namespace SpaRelajarnosREST.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class FacturaReserva
+    public partial class Perfil
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Perfil()
+        {
+            this.Usuario_Perfil = new HashSet<Usuario_Perfil>();
+        }
+    
         public int Id { get; set; }
-        public Nullable<System.DateTime> FechaEmision { get; set; }
-        public Nullable<int> IdMetodoPago { get; set; }
-        public Nullable<int> IdReserva { get; set; }
-        public Nullable<decimal> Total { get; set; }
+        public string Nombre { get; set; }
+        public string PaginaNavegar { get; set; }
 
         [JsonIgnore]
-        public virtual MetodoPago MetodoPago { get; set; }
-        [JsonIgnore]
-        public virtual Reserva Reserva { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Usuario_Perfil> Usuario_Perfil { get; set; }
     }
 }

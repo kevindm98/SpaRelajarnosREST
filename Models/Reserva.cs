@@ -9,8 +9,8 @@
 
 namespace SpaRelajarnosREST.Models
 {
-	using Newtonsoft.Json;
-	using System;
+    using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
     
     public partial class Reserva
@@ -30,17 +30,17 @@ namespace SpaRelajarnosREST.Models
         public Nullable<int> IdSede { get; set; }
         public Nullable<int> IdEstado { get; set; }
 
-		[JsonIgnore]
-		public virtual Cliente Cliente { get; set; }
-		[JsonIgnore]
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
+        public virtual Cliente Cliente { get; set; }
+        [JsonIgnore]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleFacturaReserva> DetalleFacturaReservas { get; set; }
-		[JsonIgnore]
-		public virtual Estado Estado { get; set; }
-		[JsonIgnore]
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
+        public virtual Estado Estado { get; set; }
+        [JsonIgnore]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FacturaReserva> FacturaReservas { get; set; }
-		[JsonIgnore]
-		public virtual Sede Sede { get; set; }
+        [JsonIgnore]
+        public virtual Sede Sede { get; set; }
     }
 }

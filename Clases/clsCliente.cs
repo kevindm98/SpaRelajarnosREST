@@ -14,9 +14,9 @@ namespace SpaRelajarnosREST.Clases
 
 		public Cliente cliente { get; set; }
 
-		public Cliente Consultar(int id)
+		public Cliente Consultar(string documento)
 		{
-			return db.Clientes.FirstOrDefault(c => c.Id == id);
+			return db.Clientes.FirstOrDefault(c => c.Documento == documento);
 		}
 
 		public string Insertar()
@@ -35,7 +35,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Actualizar()
 		{
-			Cliente _cliente = Consultar(cliente.Id);
+			Cliente _cliente = Consultar(cliente.Documento);
 
 			try
 			{
@@ -58,7 +58,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Eliminar()
 		{
-			Cliente _cliente = Consultar(cliente.Id);
+			Cliente _cliente = Consultar(cliente.Documento);
 
 			try
 			{

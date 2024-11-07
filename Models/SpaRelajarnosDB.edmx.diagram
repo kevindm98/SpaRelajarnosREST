@@ -4,47 +4,53 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e7d108d684af4b9fa6c11aaa451c1d12" Name="Diagram1">
-        <EntityTypeShape EntityType="SpaRelajarnosDB.Cargo" Width="1.5" PointX="3.75" PointY="18.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.Ciudad" Width="1.5" PointX="1.5" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.Cliente" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.DetalleFacturaProducto" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.DetalleFacturaReserva" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.Empleado" Width="1.5" PointX="6" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.Especialidad" Width="1.5" PointX="6" PointY="18.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.EspecialidadEmpleado" Width="1.5" PointX="8.25" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.Estado" Width="1.5" PointX="3.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.FacturaProducto" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.FacturaReserva" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.MetodoPago" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.Producto" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.Promocion" Width="1.5" PointX="6" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.PromocionServicio" Width="1.5" PointX="8.25" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.Reserva" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.Sede" Width="1.5" PointX="3.75" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.Servicio" Width="1.5" PointX="6" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.TipoProducto" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpaRelajarnosDB.TipoServicio" Width="1.5" PointX="3.75" PointY="15" IsExpanded="true" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__Empleado__IdCarg__403A8C7D" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__Sede__IdCiudad__3D5E1FD2" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__FacturaPr__IdCli__656C112C" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__Reserva__IdClien__5070F446" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__DetalleFa__IdFac__6D0D32F4" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__DetalleFa__IdPro__6E01572D" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__DetalleFa__IdRes__5535A963" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__DetalleFa__IdSer__5629CD9C" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__Empleado__IdSede__412EB0B6" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__Especiali__IdEmp__46E78A0C" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__Especiali__IdEsp__45F365D3" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__Reserva__IdEstad__52593CB8" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__FacturaPr__IdMet__6477ECF3" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__FacturaRe__IdMet__5AEE82B9" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__FacturaRe__IdRes__5BE2A6F2" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__Producto__IdTipo__6A30C649" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__Promocion__IdPro__60A75C0F" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__Promocion__IdSer__619B8048" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__Reserva__IdSede__5165187F" ManuallyRouted="false" />
-        <AssociationConnector Association="SpaRelajarnosDB.FK__Servicio__IdTipo__4BAC3F29" ManuallyRouted="false" />
+      <Diagram DiagramId="db2a6c70ed9c4bd1ba5b64c5183af1b5" Name="Diagram1">
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Cargo" Width="1.5" PointX="3.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Ciudad" Width="1.5" PointX="1.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Cliente" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.DetalleFacturaProducto" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.DetalleFacturaReserva" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Empleado" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Especialidad" Width="1.5" PointX="9" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.EspecialidadEmpleado" Width="1.5" PointX="11.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Estado" Width="1.5" PointX="3.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.FacturaProducto" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.FacturaReserva" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.MetodoPago" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Perfil" Width="1.5" PointX="8.25" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Producto" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Promocion" Width="1.5" PointX="9" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.PromocionServicio" Width="1.5" PointX="11.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Reserva" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Sede" Width="1.5" PointX="3.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Servicio" Width="1.5" PointX="6" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.TipoProducto" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.TipoServicio" Width="1.5" PointX="3.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Usuario" Width="1.5" PointX="8.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpaRelajarnosModel.Usuario_Perfil" Width="1.5" PointX="10.5" PointY="13.625" IsExpanded="true" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Empleado__IdCarg__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Sede__IdCiudad__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__FacturaPr__IdCli__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Reserva__IdClien__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__DetalleFa__IdFac__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__DetalleFa__IdPro__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__DetalleFa__IdRes__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__DetalleFa__IdSer__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Empleado__IdSede__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Especiali__IdEmp__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Usuario__IdEmple__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Especiali__IdEsp__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Reserva__IdEstad__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__FacturaPr__IdMet__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__FacturaRe__IdMet__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__FacturaRe__IdRes__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Usuario_P__IdPer__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Producto__IdTipo__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Promocion__IdPro__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Promocion__IdSer__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Reserva__IdSede__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Servicio__IdTipo__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaRelajarnosModel.FK__Usuario_P__IdUsu__07C12930" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -9,8 +9,8 @@
 
 namespace SpaRelajarnosREST.Models
 {
-	using Newtonsoft.Json;
-	using System;
+    using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
     
     public partial class Estado
@@ -24,8 +24,8 @@ namespace SpaRelajarnosREST.Models
         public int Id { get; set; }
         public string Nombre { get; set; }
 
-		[JsonIgnore]
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reserva> Reservas { get; set; }
     }
 }

@@ -82,7 +82,7 @@ namespace SpaRelajarnosREST.Clases
 		{
 			return from s in db.Set<Servicio>()
 				   join ts in db.Set<TipoServicio>()
-				   on s.Id equals ts.Id
+				   on s.TipoServicio.Id equals ts.Id
 				   orderby s.Nombre, ts.Nombre
 				   select new
 				   {

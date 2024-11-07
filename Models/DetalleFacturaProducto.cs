@@ -9,8 +9,8 @@
 
 namespace SpaRelajarnosREST.Models
 {
-	using Newtonsoft.Json;
-	using System;
+    using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
     
     public partial class DetalleFacturaProducto
@@ -20,9 +20,9 @@ namespace SpaRelajarnosREST.Models
         public Nullable<int> IdProducto { get; set; }
         public Nullable<int> Cantidad { get; set; }
 
-		[JsonIgnore]
-		public virtual FacturaProducto FacturaProducto { get; set; }
-		[JsonIgnore]
-		public virtual Producto Producto { get; set; }
+        [JsonIgnore]
+        public virtual FacturaProducto FacturaProducto { get; set; }
+        [JsonIgnore]
+        public virtual Producto Producto { get; set; }
     }
 }

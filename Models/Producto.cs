@@ -9,8 +9,8 @@
 
 namespace SpaRelajarnosREST.Models
 {
-	using Newtonsoft.Json;
-	using System;
+    using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
     
     public partial class Producto
@@ -26,10 +26,10 @@ namespace SpaRelajarnosREST.Models
         public Nullable<decimal> Precio { get; set; }
         public Nullable<int> IdTipoProducto { get; set; }
 
-		[JsonIgnore]
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleFacturaProducto> DetalleFacturaProductoes { get; set; }
-		[JsonIgnore]
-		public virtual TipoProducto TipoProducto { get; set; }
+        [JsonIgnore]
+        public virtual TipoProducto TipoProducto { get; set; }
     }
 }

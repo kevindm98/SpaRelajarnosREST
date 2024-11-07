@@ -17,7 +17,7 @@ namespace SpaRelajarnosREST.Controllers
 
 		[HttpGet]
 		[Route("Consultar")]
-		public Cliente Consultar(int documento)
+		public Cliente Consultar(string documento)
 		{
 			clsCliente cliente = new clsCliente();
 			return cliente.Consultar(documento);

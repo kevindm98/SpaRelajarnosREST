@@ -9,8 +9,8 @@
 
 namespace SpaRelajarnosREST.Models
 {
-	using Newtonsoft.Json;
-	using System;
+    using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
     
     public partial class Empleado
@@ -19,6 +19,7 @@ namespace SpaRelajarnosREST.Models
         public Empleado()
         {
             this.EspecialidadEmpleadoes = new HashSet<EspecialidadEmpleado>();
+            this.Usuarios = new HashSet<Usuario>();
         }
     
         public int Id { get; set; }
@@ -28,17 +29,20 @@ namespace SpaRelajarnosREST.Models
         public Nullable<int> Telefono { get; set; }
         public string Correo { get; set; }
         public string Direccion { get; set; }
-        public Nullable<System.DateTime> FechaContratación { get; set; }
+        public Nullable<System.DateTime> FechaContratacion { get; set; }
         public Nullable<decimal> Salario { get; set; }
         public Nullable<int> IdCargo { get; set; }
         public Nullable<int> IdSede { get; set; }
 
-		[JsonIgnore]
-		public virtual Cargo Cargo { get; set; }
-		[JsonIgnore]
-		public virtual Sede Sede { get; set; }
-		[JsonIgnore]
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
+        public virtual Cargo Cargo { get; set; }
+        [JsonIgnore]
+        public virtual Sede Sede { get; set; }
+        [JsonIgnore]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EspecialidadEmpleado> EspecialidadEmpleadoes { get; set; }
+        [JsonIgnore]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }

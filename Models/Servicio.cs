@@ -9,8 +9,8 @@
 
 namespace SpaRelajarnosREST.Models
 {
-	using Newtonsoft.Json;
-	using System;
+    using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
     
     public partial class Servicio
@@ -29,13 +29,13 @@ namespace SpaRelajarnosREST.Models
         public Nullable<int> DuracionMinutos { get; set; }
         public Nullable<int> IdTipoServicio { get; set; }
 
-		[JsonIgnore]
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleFacturaReserva> DetalleFacturaReservas { get; set; }
-		[JsonIgnore]
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PromocionServicio> PromocionServicios { get; set; }
-		[JsonIgnore]
-		public virtual TipoServicio TipoServicio { get; set; }
+        [JsonIgnore]
+        public virtual TipoServicio TipoServicio { get; set; }
     }
 }

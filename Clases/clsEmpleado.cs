@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Web;
 
 namespace SpaRelajarnosREST.Clases
@@ -14,19 +15,30 @@ namespace SpaRelajarnosREST.Clases
 		public Empleado empleado { get; set; }
 
 
-		public Empleado Consultar(int id)
+		public Empleado Consultar(string documento)
 		{
-			return db.Empleadoes.FirstOrDefault(e => e.Id == id);
+			return db.Empleadoes.FirstOrDefault(e => e.Documento == documento);
 		}
 
-		public string Insertar(int IdEspecialidad)
+		public IQueryable ConsultarConCargo(string documento) 
+		{
+			return from E in db.Set<Empleado>()
+				   join C in db.Set<Cargo>()
+				   on E.Cargo.Id equals C.Id
+				   where E.Documento == documento
+				   select new
+				   {
+					   Empleado = E.Nombre + " " + E.Apellido,
+					   Id = E.Id,
+					   Cargo = C.Nombre
+				   };
+
+		}
+			
+		public string Insertar()
 		{
 			try
 			{
-				EspecialidadEmpleado especialidadEmpleado = new EspecialidadEmpleado();
-				especialidadEmpleado.Id = IdEspecialidad;
-				especialidadEmpleado.Id = empleado.Id;
-				db.EspecialidadEmpleadoes.Add(especialidadEmpleado);
 				db.Empleadoes.Add(empleado);
 				db.SaveChanges();
 				return "Empleado insertado satisfactoriamente";
@@ -39,7 +51,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Actualizar()
 		{
-			Empleado _empleado = Consultar(empleado.Id);
+			Empleado _empleado = Consultar(empleado.Documento);
 
 			try
 			{
@@ -62,7 +74,7 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Eliminar()
 		{
-			Empleado _empleado = Consultar(empleado.Id);
+			Empleado _empleado = Consultar(empleado.Documento);
 
 			try
 			{
@@ -85,26 +97,24 @@ namespace SpaRelajarnosREST.Clases
         public IQueryable ListarEmpleados()
         {	
 			return from E in db.Set<Empleado>()
-				   join EE in db.Set<EspecialidadEmpleado>()
-				   on E.Id equals EE.Id
-				   join Es in db.Set<Especialidad>()
-				   on EE.Id equals Es.Id
+				   join C in db.Set<Cargo>()
+				   on E.Cargo.Id equals C.Id
+				   join S in db.Set<Sede>()
+				   on E.Sede.Id equals S.Id
 				   orderby E.Nombre
                    select new
                    {
-                       Documento = E.Id,
+					   Id = E.Id,
+                       Documento = E.Documento,
                        Empleado = E.Nombre + " " + E.Apellido,
-                       Cargo = E.Cargo,
+					   Telefono = E.Telefono,
+					   Email = E.Correo,
 					   Salario = E.Salario,
-                       Especialidad = Es.Nombre  
-                   };
+					   Direccion = E.Direccion,
+					   Cargo = C.Nombre,
+					   Sede = S.Nombre,
+					   fechaContratacion = E.FechaContratacion
+				   };
         }
-		public List<Especialidad> LlenarCombo()
-		{
-			return db.Especialidads
-				.OrderBy(ts => ts.Nombre)
-				.ToList();
-		}
-
 	}
 }

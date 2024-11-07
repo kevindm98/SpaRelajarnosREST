@@ -37,6 +37,7 @@ namespace SpaRelajarnosREST.Models
         public virtual DbSet<FacturaProducto> FacturaProductoes { get; set; }
         public virtual DbSet<FacturaReserva> FacturaReservas { get; set; }
         public virtual DbSet<MetodoPago> MetodoPagoes { get; set; }
+        public virtual DbSet<Perfil> Perfils { get; set; }
         public virtual DbSet<Producto> Productoes { get; set; }
         public virtual DbSet<Promocion> Promocions { get; set; }
         public virtual DbSet<PromocionServicio> PromocionServicios { get; set; }
@@ -45,5 +46,7 @@ namespace SpaRelajarnosREST.Models
         public virtual DbSet<Servicio> Servicios { get; set; }
         public virtual DbSet<TipoProducto> TipoProductoes { get; set; }
         public virtual DbSet<TipoServicio> TipoServicios { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<Usuario_Perfil> Usuario_Perfil { get; set; }
     }
 }

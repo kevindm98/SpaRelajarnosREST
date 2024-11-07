@@ -9,8 +9,8 @@
 
 namespace SpaRelajarnosREST.Models
 {
-	using Newtonsoft.Json;
-	using System;
+    using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
     
     public partial class PromocionServicio
@@ -19,9 +19,9 @@ namespace SpaRelajarnosREST.Models
         public Nullable<int> IdPromocion { get; set; }
         public Nullable<int> IdServicio { get; set; }
 
-		[JsonIgnore]
-		public virtual Promocion Promocion { get; set; }
-		[JsonIgnore]
-		public virtual Servicio Servicio { get; set; }
+        [JsonIgnore]
+        public virtual Promocion Promocion { get; set; }
+        [JsonIgnore]
+        public virtual Servicio Servicio { get; set; }
     }
 }

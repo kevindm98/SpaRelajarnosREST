@@ -17,19 +17,27 @@ namespace SpaRelajarnosREST.Controllers
 
 		[HttpGet]
 		[Route("Consultar")]
-		public Empleado Consultar(int documento)
+		public Empleado Consultar(string documento)
 		{
 			clsEmpleado empleado = new clsEmpleado();
 			return empleado.Consultar(documento);
 		}
 
-		[HttpPost]
+        [HttpGet]
+        [Route("ConsultarConCargo")]
+        public IQueryable ConsultarConCargo(string documento)
+        {
+            clsEmpleado empleado = new clsEmpleado();
+            return empleado.ConsultarConCargo(documento);
+        }
+
+        [HttpPost]
 		[Route("Insertar")]
-		public string Insertar([FromBody] Empleado Empleado, int idEspecialidad)
+		public string Insertar([FromBody] Empleado Empleado)
 		{
 			clsEmpleado empleado = new clsEmpleado();
 			empleado.empleado = Empleado;
-			return empleado.Insertar(idEspecialidad);
+			return empleado.Insertar();
 		}
 
 		[HttpPut]
@@ -57,12 +65,5 @@ namespace SpaRelajarnosREST.Controllers
             clsEmpleado _empleado = new clsEmpleado();
             return _empleado.ListarEmpleados();
         }
-		[HttpGet]
-		[Route("LlenarCombo")]
-		public List<Especialidad> LlenarCombo()
-		{
-			clsEmpleado especialidad = new clsEmpleado();
-			return especialidad.LlenarCombo();
-		}
 	}
 }
