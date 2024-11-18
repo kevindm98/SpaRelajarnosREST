@@ -19,7 +19,7 @@ namespace SpaRelajarnosREST.Models
         public Cliente()
         {
             this.FacturaProductoes = new HashSet<FacturaProducto>();
-            this.Reservas = new HashSet<Reserva>();
+            this.FacturaReservas = new HashSet<FacturaReserva>();
         }
     
         public int Id { get; set; }
@@ -36,6 +36,6 @@ namespace SpaRelajarnosREST.Models
         public virtual ICollection<FacturaProducto> FacturaProductoes { get; set; }
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reserva> Reservas { get; set; }
+        public virtual ICollection<FacturaReserva> FacturaReservas { get; set; }
     }
 }

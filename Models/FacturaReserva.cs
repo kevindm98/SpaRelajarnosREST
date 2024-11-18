@@ -15,15 +15,29 @@ namespace SpaRelajarnosREST.Models
     
     public partial class FacturaReserva
     {
-        public int Id { get; set; }
-        public Nullable<System.DateTime> FechaEmision { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public FacturaReserva()
+        {
+            this.DetalleFacturaReservas = new HashSet<DetalleFacturaReserva>();
+            this.Reservas = new HashSet<Reserva>();
+        }
+    
+        public int Numero { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
         public Nullable<int> IdMetodoPago { get; set; }
-        public Nullable<int> IdReserva { get; set; }
-        public Nullable<decimal> Total { get; set; }
+        public Nullable<int> IdCliente { get; set; }
+        public Nullable<int> IdEmpleado { get; set; }
 
+        [JsonIgnore]
+        public virtual Cliente Cliente { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DetalleFacturaReserva> DetalleFacturaReservas { get; set; }
+        [JsonIgnore]
+        public virtual Empleado Empleado { get; set; }
         [JsonIgnore]
         public virtual MetodoPago MetodoPago { get; set; }
         [JsonIgnore]
-        public virtual Reserva Reserva { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reserva> Reservas { get; set; }
     }
 }

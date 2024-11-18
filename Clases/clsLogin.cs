@@ -52,6 +52,7 @@ namespace SpaRelajarnosREST.Clases
                              U.Clave == login.Clave
                        select new LoginRespuesta
                        {
+                           Usuario = U.UserName,
                            Perfil = P.Nombre,
                            Token = token,
                            Autenticado = true,

@@ -58,7 +58,7 @@ namespace SpaRelajarnosREST.Clases
                 db.SaveChanges();
 
                 Usuario_Perfil usuario_Perfil = db.Usuario_Perfil.FirstOrDefault(up => up.Id == idUsuarioPerfil);
-                usuario_Perfil.IdPerfil = idPerfil;
+                usuario_Perfil.Perfil.Id = idPerfil;
                 db.SaveChanges();
                 return "Se actualizaron los datos del usuario: " + usuario.UserName;
             }
@@ -95,7 +95,7 @@ namespace SpaRelajarnosREST.Clases
                    join U in db.Set<Usuario>()
                    on UP.IdUsuario equals U.Id
                    join E in db.Set<Empleado>()
-                   on U.IdEmpleado equals E.Id
+                   on U.Empleado.Id equals E.Id
                    join C in db.Set<Cargo>()
                    on E.Cargo.Id equals C.Id
                    orderby U.UserName

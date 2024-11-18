@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
 
 namespace SpaRelajarnosREST.Clases
 {
@@ -95,5 +96,22 @@ namespace SpaRelajarnosREST.Clases
 					   Duracion_Servicio = s.DuracionMinutos
 				   };
 		}
-	}
+		[AllowAnonymous]
+        public IQueryable ListarServiciosXTipo(int TipoServicio)
+        {
+            //En SQL la instrucción es SELECT - FROM - WHERE
+            //En linq la instrucción es FROM - WHERE - SELECT
+            return from P in db.Set<Servicio>()
+                   join TS in db.Set<TipoServicio>()
+                   on P.TipoServicio.Id equals TS.Id
+                   //Aca iría el where, si se requiere
+                   where TS.Id == TipoServicio
+                   orderby TS.Nombre, P.Nombre //Order by si se requiere
+                   select new //Finalmente, se presentan los campos que se van a mostrar
+                   {
+                       Codigo = P.Id + "|" + P.Precio,
+                       Nombre = P.Nombre
+                   };
+        }
+    }
 }

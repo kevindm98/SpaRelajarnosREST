@@ -9,7 +9,6 @@
 
 namespace SpaRelajarnosREST.Models
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -18,10 +17,8 @@ namespace SpaRelajarnosREST.Models
         public int Id { get; set; }
         public Nullable<int> IdEspecialidad { get; set; }
         public Nullable<int> IdEmpleado { get; set; }
-
-        [JsonIgnore]
+    
         public virtual Empleado Empleado { get; set; }
-        [JsonIgnore]
         public virtual Especialidad Especialidad { get; set; }
     }
 }

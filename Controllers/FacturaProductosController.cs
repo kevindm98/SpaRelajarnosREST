@@ -14,39 +14,5 @@ namespace SpaRelajarnosREST.Controllers
 	[RoutePrefix("api/FacturaProductos")]
 	public class FacturaProductosController : ApiController
 	{
-		[HttpGet]
-		[Route("Consultar")]
-		public FacturaProducto Consultar(int id)
-		{
-			clsFacturaProducto facturaProducto = new clsFacturaProducto();
-			return facturaProducto.Consultar(id);
-		}
-
-		[HttpPost]
-		[Route("Insertar")]
-		public string Insertar([FromBody] FacturaProducto FacturaProducto)
-		{
-			clsFacturaProducto facturaProducto = new clsFacturaProducto();
-			facturaProducto.facturaProducto = FacturaProducto;
-			return facturaProducto.Insertar();
-		}
-
-		[HttpPut]
-		[Route("Actualizar")]
-		public string Actualizar([FromBody] FacturaProducto FacturaProducto)
-		{
-			clsFacturaProducto facturaProducto = new clsFacturaProducto();
-			facturaProducto.facturaProducto = FacturaProducto;
-			return facturaProducto.Actualizar();
-		}
-
-		[HttpDelete]
-		[Route("Eliminar")]
-		public string Eliminar([FromBody] FacturaProducto FacturaProducto)
-		{
-			clsFacturaProducto facturaProducto = new clsFacturaProducto();
-			facturaProducto.facturaProducto = FacturaProducto;
-			return facturaProducto.Eliminar();
-		}
 	}
 }

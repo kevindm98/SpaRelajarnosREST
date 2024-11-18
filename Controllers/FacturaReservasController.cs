@@ -14,40 +14,48 @@ namespace SpaRelajarnosREST.Controllers
 	[RoutePrefix("api/FacturaReservas")]
 	public class FacturaReservasController : ApiController
 	{
+        [HttpPost]
+        [Route("GrabarFactura")]
+        public string GrabarFactura([FromBody] FacturaReserva facturaReserva)
+        {
+            clsFacturaReserva Factura = new clsFacturaReserva();
+            Factura.facturaReserva = facturaReserva;
+            return Factura.GrabarFactura();
+        }
 
-		[HttpGet]
-		[Route("Consultar")]
-		public FacturaReserva Consultar(int id)
-		{
-			clsFacturaReserva facturaReserva = new clsFacturaReserva();
-			return facturaReserva.Consultar(id);
-		}
+        //[HttpGet]
+        //[Route("Consultar")]
+        //public FacturaReserva Consultar(int id)
+        //{
+        //	clsFacturaReserva facturaReserva = new clsFacturaReserva();
+        //	return facturaReserva.Consultar(id);
+        //}
 
-		[HttpPost]
-		[Route("Insertar")]
-		public string Insertar([FromBody] FacturaReserva FacturaReserva)
-		{
-			clsFacturaReserva facturaReserva = new clsFacturaReserva();
-			facturaReserva.facturaReserva = FacturaReserva;
-			return facturaReserva.Insertar();
-		}
+        //[HttpPost]
+        //[Route("Insertar")]
+        //public string Insertar([FromBody] FacturaReserva FacturaReserva)
+        //{
+        //	clsFacturaReserva facturaReserva = new clsFacturaReserva();
+        //	facturaReserva.facturaReserva = FacturaReserva;
+        //	return facturaReserva.Insertar();
+        //}
 
-		[HttpPut]
-		[Route("Actualizar")]
-		public string Actualizar([FromBody] FacturaReserva FacturaReserva)
-		{
-			clsFacturaReserva facturaReserva = new clsFacturaReserva();
-			facturaReserva.facturaReserva = FacturaReserva;
-			return facturaReserva.Actualizar();
-		}
+        //[HttpPut]
+        //[Route("Actualizar")]
+        //public string Actualizar([FromBody] FacturaReserva FacturaReserva)
+        //{
+        //	clsFacturaReserva facturaReserva = new clsFacturaReserva();
+        //	facturaReserva.facturaReserva = FacturaReserva;
+        //	return facturaReserva.Actualizar();
+        //}
 
-		[HttpDelete]
-		[Route("Eliminar")]
-		public string Eliminar([FromBody] FacturaReserva FacturaReserva)
-		{
-			clsFacturaReserva facturaReserva = new clsFacturaReserva();
-			facturaReserva.facturaReserva = FacturaReserva;
-			return facturaReserva.Eliminar();
-		}
-	}
+        //[HttpDelete]
+        //[Route("Eliminar")]
+        //public string Eliminar([FromBody] FacturaReserva FacturaReserva)
+        //{
+        //	clsFacturaReserva facturaReserva = new clsFacturaReserva();
+        //	facturaReserva.facturaReserva = FacturaReserva;
+        //	return facturaReserva.Eliminar();
+        //}
+    }
 }

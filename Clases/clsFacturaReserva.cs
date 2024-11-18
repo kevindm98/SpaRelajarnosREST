@@ -12,70 +12,38 @@ namespace SpaRelajarnosREST.Clases
 		private SpaRelajarnosEntities db = new SpaRelajarnosEntities();
 
 		public FacturaReserva facturaReserva { get; set; }
+		public DetalleFacturaReserva detalleFacturaReserva { get; set; }
 
-		public FacturaReserva Consultar(int id)
-		{
-			return db.FacturaReservas.FirstOrDefault(f => f.Id == id);
-		}
+        public string GrabarFactura()
+        {
+            if (facturaReserva.Numero == 0)
+            {
+                return GrabarEncabezado();
+            }
+            return GrabarDetalle();
+        }
 
-		public string Insertar()
-		{
-			try
-			{
-				db.FacturaReservas.Add(facturaReserva);
-				db.SaveChanges();
-				return "Factura insertada satisfactoriamente";
-			}
-			catch (Exception ex)
-			{
-				return ex.Message;
-			}
-		}
+        private string GrabarEncabezado()
+        {
+            facturaReserva.Numero = ObtenerNumeroFactura();
+            facturaReserva.Fecha = DateTime.Now;
+            db.FacturaReservas.Add(facturaReserva);
+            db.SaveChanges();
+            return facturaReserva.Numero.ToString();
+        }
 
-		public string Actualizar()
-		{
-			FacturaReserva _factura = Consultar(facturaReserva.Id);
+        private string GrabarDetalle()
+        {
+            detalleFacturaReserva = facturaReserva.DetalleFacturaReservas.FirstOrDefault();
+            detalleFacturaReserva.Numero = facturaReserva.Numero;
+            db.DetalleFacturaReservas.Add(detalleFacturaReserva);
+            db.SaveChanges();
+            return facturaReserva.Numero.ToString();
+        }
+        private int ObtenerNumeroFactura()
+        {
+            return db.FacturaReservas.Select(f => f.Numero).DefaultIfEmpty(0).Max() + 1;
 
-			try
-			{
-				if (_factura != null)
-				{
-					db.FacturaReservas.AddOrUpdate(facturaReserva);
-					db.SaveChanges();
-					return "Factura actualizada satisfactoriamente";
-				}
-				else
-				{
-					return "Factura no encontrada";
-				}
-			}
-			catch (Exception ex)
-			{
-				return ex.Message;
-			}
-		}
-
-		public string Eliminar()
-		{
-			FacturaReserva _factura = Consultar(facturaReserva.Id);
-
-			try
-			{
-				if (_factura != null)
-				{
-					db.FacturaReservas.Remove(_factura);
-					db.SaveChanges();
-					return "Factura eliminada satisfactoriamente";
-				}
-				else
-				{
-					return "Factura no encontrada";
-				}
-			}
-			catch (Exception ex)
-			{
-				return ex.Message;
-			}
-		}
-	}
+        }
+    }
 }

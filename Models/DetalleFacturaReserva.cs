@@ -15,14 +15,15 @@ namespace SpaRelajarnosREST.Models
     
     public partial class DetalleFacturaReserva
     {
-        public int Id { get; set; }
+        public int Codigo { get; set; }
+        public Nullable<int> Numero { get; set; }
         public Nullable<int> Cantidad { get; set; }
-        public Nullable<int> IdReserva { get; set; }
+        public Nullable<decimal> ValorUnitario { get; set; }
         public Nullable<int> IdServicio { get; set; }
 
         [JsonIgnore]
-        public virtual Reserva Reserva { get; set; }
-        [JsonIgnore]
         public virtual Servicio Servicio { get; set; }
+        [JsonIgnore]
+        public virtual FacturaReserva FacturaReserva { get; set; }
     }
 }

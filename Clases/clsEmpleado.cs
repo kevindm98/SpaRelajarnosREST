@@ -5,6 +5,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Web;
+using System.Web.Http;
 
 namespace SpaRelajarnosREST.Clases
 {
@@ -32,10 +33,26 @@ namespace SpaRelajarnosREST.Clases
 					   Id = E.Id,
 					   Cargo = C.Nombre
 				   };
-
 		}
-			
-		public string Insertar()
+
+		[AllowAnonymous]
+        public IQueryable ConsultarXUsuario(string Usuario)
+        {
+            return from E in db.Set<Empleado>()
+                   join C in db.Set<Cargo>()
+                   on E.Cargo.Id equals C.Id
+				   join U in db.Set<Usuario>()
+				   on E.Id equals U.Empleado.Id
+				   where U.UserName == Usuario
+                   select new
+                   {
+					   idEmpleado = E.Id,
+                       Empleado = E.Nombre + " " + E.Apellido,
+                       Cargo = C.Nombre
+                   };
+        }
+
+        public string Insertar()
 		{
 			try
 			{
@@ -116,5 +133,5 @@ namespace SpaRelajarnosREST.Clases
 					   fechaContratacion = E.FechaContratacion
 				   };
         }
-	}
+    }
 }

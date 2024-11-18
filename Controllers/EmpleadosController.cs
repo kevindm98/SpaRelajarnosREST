@@ -30,6 +30,14 @@ namespace SpaRelajarnosREST.Controllers
             clsEmpleado empleado = new clsEmpleado();
             return empleado.ConsultarConCargo(documento);
         }
+		
+		[HttpGet]
+        [Route("ConsultarXUsuario")]
+        public IQueryable ConsultarXUsuario(string Usuario)
+        {
+            clsEmpleado empleado = new clsEmpleado();
+            return empleado.ConsultarXUsuario(Usuario);
+        }
 
         [HttpPost]
 		[Route("Insertar")]

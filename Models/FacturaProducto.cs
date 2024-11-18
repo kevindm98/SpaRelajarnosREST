@@ -21,17 +21,19 @@ namespace SpaRelajarnosREST.Models
             this.DetalleFacturaProductoes = new HashSet<DetalleFacturaProducto>();
         }
     
-        public int Id { get; set; }
-        public Nullable<System.DateTime> FechaEmision { get; set; }
+        public int Numero { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
         public Nullable<int> IdMetodoPago { get; set; }
         public Nullable<int> IdCliente { get; set; }
-        public Nullable<decimal> Total { get; set; }
+        public Nullable<int> IdEmpleado { get; set; }
 
         [JsonIgnore]
         public virtual Cliente Cliente { get; set; }
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleFacturaProducto> DetalleFacturaProductoes { get; set; }
+        [JsonIgnore]
+        public virtual Empleado Empleado { get; set; }
         [JsonIgnore]
         public virtual MetodoPago MetodoPago { get; set; }
     }

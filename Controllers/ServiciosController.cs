@@ -30,6 +30,14 @@ namespace SpaRelajarnosREST.Controllers
 			clsServicio servicio = new clsServicio();
 			return servicio.LlenarTabla();
 		}
+		
+		[HttpGet]
+		[Route("ListarServiciosXTipo")]
+		public IQueryable ListarServiciosXTipo(int TipoServicio)
+		{
+			clsServicio servicio = new clsServicio();
+			return servicio.ListarServiciosXTipo(TipoServicio);
+		}
 
 		[HttpPost]
 		[Route("Insertar")]

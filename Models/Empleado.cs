@@ -19,6 +19,8 @@ namespace SpaRelajarnosREST.Models
         public Empleado()
         {
             this.EspecialidadEmpleadoes = new HashSet<EspecialidadEmpleado>();
+            this.FacturaProductoes = new HashSet<FacturaProducto>();
+            this.FacturaReservas = new HashSet<FacturaReserva>();
             this.Usuarios = new HashSet<Usuario>();
         }
     
@@ -41,6 +43,12 @@ namespace SpaRelajarnosREST.Models
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EspecialidadEmpleado> EspecialidadEmpleadoes { get; set; }
+        [JsonIgnore]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FacturaProducto> FacturaProductoes { get; set; }
+        [JsonIgnore]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FacturaReserva> FacturaReservas { get; set; }
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuario> Usuarios { get; set; }
