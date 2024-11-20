@@ -1,0 +1,219 @@
+create database SpaRelajarnos;
+go
+
+use SpaRelajarnos;
+go
+
+CREATE TABLE Cliente
+(
+Id int identity(1,1) primary key,
+Documento varchar(20),
+Nombre varchar(50),
+Apellido varchar(50),
+Telefono int,
+Correo varchar(50),
+Direccion varchar(100),
+FechaRegistro date,
+CONSTRAINT Documento_Unico_Cliente UNIQUE (Documento)
+);
+go
+
+CREATE TABLE Cargo
+(
+Id int identity(1,1) primary key,
+Nombre varchar(50)
+);
+go
+
+CREATE TABLE Ciudad
+(
+Id int identity(1,1) primary key,
+Nombre varchar(20)
+);
+go
+
+CREATE TABLE Sede
+(
+Id int identity(1,1) primary key,
+Nombre varchar(20),
+Direccion varchar(100),
+IdCiudad int foreign key (IdCiudad) References Ciudad(Id)
+);
+go
+
+CREATE TABLE Empleado
+(
+Id int identity(1,1) primary key,
+Documento varchar(20),
+Nombre varchar(50),
+Apellido varchar(50),
+Telefono int,
+Correo varchar(50),
+Direccion varchar(100),
+FechaContratacion date,
+Salario decimal(10,2),
+IdCargo int foreign key (IdCargo) References Cargo(Id),
+IdSede int foreign key (IdSede) References Sede(Id),
+CONSTRAINT Documento_Unico_Empleado UNIQUE (Documento)
+);
+go
+
+CREATE TABLE Especialidad
+(
+Id int identity(1,1) primary key,
+Nombre varchar(50)
+);
+go
+
+CREATE TABLE EspecialidadEmpleado
+(
+Id int identity(1,1) primary key,
+IdEspecialidad int foreign key (IdEspecialidad) References Especialidad(Id),
+IdEmpleado int foreign key (IdEmpleado) References Empleado(Id)
+);
+go
+
+CREATE TABLE MetodoPago
+(
+Id int identity(1,1) primary key,
+Nombre varchar(20)
+);
+go
+
+CREATE TABLE TipoServicio
+(
+Id int identity(1,1) primary key,
+Nombre varchar(50)
+);
+go
+
+CREATE TABLE Servicio
+(
+Id int identity(1,1) primary key,
+Nombre varchar(50),
+Descripcion varchar(200),
+Precio  decimal(10,2),
+DuracionMinutos int,
+IdTipoServicio int foreign key (IdTipoServicio) References TipoServicio(Id)
+);
+GO
+
+CREATE TABLE Estado
+(
+Id int identity(1,1) primary key,
+Nombre varchar(20)
+);
+go
+
+CREATE TABLE FacturaReserva
+(
+Numero int primary key,
+Fecha date,
+IdMetodoPago int foreign key (IdMetodoPago) References MetodoPago(Id),
+IdCliente int foreign key (IdCliente) References Cliente(Id),
+IdEmpleado int foreign key (IdEmpleado) References Empleado(Id)
+);
+go
+
+CREATE TABLE Reserva
+(
+Id int identity(1,1) primary key,
+Fecha date,
+Hora time,
+Duracion int,
+IdSede int foreign key (IdSede) References Sede(Id),
+IdFacturaReserva int foreign key (IdFacturaReserva) References FacturaReserva(Numero),
+IdEstado int foreign key (IdEstado) References Estado(Id)
+);
+go
+
+CREATE TABLE DetalleFacturaReserva
+(
+Codigo int identity(1,1) primary key,
+Numero int foreign key (Numero) References FacturaReserva(Numero),
+Cantidad int,
+ValorUnitario decimal(10,2),
+IdServicio int foreign key (IdServicio) References Servicio(Id)
+);
+go
+
+CREATE TABLE TipoProducto
+(
+Id int identity(1,1) primary key,
+Nombre varchar(20)
+);
+go
+
+CREATE TABLE Producto
+(
+Id int identity(1,1) primary key,
+Nombre varchar(20),
+Precio  decimal(10,2),
+IdTipoProducto int foreign key (IdTipoProducto) References TipoProducto(Id)
+);
+go
+
+CREATE TABLE Promocion
+(
+Id int identity(1,1) primary key,
+Nombre varchar(20),
+Descuento int,
+FechaInicio date,
+FechaFinal date
+);
+go
+
+CREATE TABLE PromocionServicio
+(
+Id int identity(1,1) primary key,
+IdPromocion int foreign key (IdPromocion) References Promocion(Id),
+IdServicio int foreign key (IdServicio) References Servicio(Id)
+);
+go
+
+CREATE TABLE FacturaProducto
+(
+Numero int primary key,
+Fecha date,
+IdMetodoPago int foreign key (IdMetodoPago) References MetodoPago(Id),
+IdCliente int foreign key (IdCliente) References Cliente(Id),
+IdEmpleado int foreign key (IdEmpleado) References Empleado(Id)
+);
+go
+
+CREATE TABLE DetalleFacturaProducto
+(
+Codigo int identity(1,1) primary key,
+Numero int foreign key (Numero) References FacturaProducto(Numero),
+Cantidad int,
+ValorUnitario decimal(10,2),
+IdProducto int foreign key (IdProducto) References Producto(Id),
+);
+GO
+
+CREATE TABLE Usuario
+(
+Id int identity(1,1) primary key,
+IdEmpleado INT FOREIGN KEY (IdEmpleado) REFERENCES Empleado(Id),
+UserName VARCHAR(20),
+Clave NVARCHAR(MAX),
+Salt NVARCHAR(MAX)
+);
+GO
+
+CREATE TABLE Perfil
+(
+Id int identity(1,1) primary key,
+Nombre VARCHAR(20),
+PaginaNavegar varchar(20)
+);
+GO
+
+CREATE TABLE Usuario_Perfil
+(
+Id int identity(1,1) primary key,
+IdUsuario INT FOREIGN KEY (IdUsuario) REFERENCES Usuario(Id),
+IdPerfil INT FOREIGN KEY (IdPerfil) REFERENCES Perfil(Id),
+Activo BIT
+);
+GO
