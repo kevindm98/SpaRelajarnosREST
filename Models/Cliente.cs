@@ -26,10 +26,10 @@ namespace SpaRelajarnosREST.Models
         public string Documento { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public Nullable<int> Telefono { get; set; }
+        public int Telefono { get; set; }
         public string Correo { get; set; }
         public string Direccion { get; set; }
-        public Nullable<System.DateTime> FechaRegistro { get; set; }
+        public System.DateTime FechaRegistro { get; set; }
 
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

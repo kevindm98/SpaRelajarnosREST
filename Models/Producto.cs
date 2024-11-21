@@ -23,8 +23,8 @@ namespace SpaRelajarnosREST.Models
     
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public Nullable<decimal> Precio { get; set; }
-        public Nullable<int> IdTipoProducto { get; set; }
+        public decimal Precio { get; set; }
+        public int IdTipoProducto { get; set; }
 
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

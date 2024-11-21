@@ -25,7 +25,7 @@ namespace SpaRelajarnosREST.Models
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }
-        public Nullable<int> IdCiudad { get; set; }
+        public int IdCiudad { get; set; }
 
         [JsonIgnore]
         public virtual Ciudad Ciudad { get; set; }

@@ -18,7 +18,6 @@ namespace SpaRelajarnosREST.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Empleado()
         {
-            this.EspecialidadEmpleadoes = new HashSet<EspecialidadEmpleado>();
             this.FacturaProductoes = new HashSet<FacturaProducto>();
             this.FacturaReservas = new HashSet<FacturaReserva>();
             this.Usuarios = new HashSet<Usuario>();
@@ -28,21 +27,18 @@ namespace SpaRelajarnosREST.Models
         public string Documento { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public Nullable<int> Telefono { get; set; }
+        public int Telefono { get; set; }
         public string Correo { get; set; }
         public string Direccion { get; set; }
-        public Nullable<System.DateTime> FechaContratacion { get; set; }
-        public Nullable<decimal> Salario { get; set; }
-        public Nullable<int> IdCargo { get; set; }
-        public Nullable<int> IdSede { get; set; }
+        public System.DateTime FechaContratacion { get; set; }
+        public decimal Salario { get; set; }
+        public int IdCargo { get; set; }
+        public int IdSede { get; set; }
 
         [JsonIgnore]
         public virtual Cargo Cargo { get; set; }
         [JsonIgnore]
         public virtual Sede Sede { get; set; }
-        [JsonIgnore]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EspecialidadEmpleado> EspecialidadEmpleadoes { get; set; }
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FacturaProducto> FacturaProductoes { get; set; }

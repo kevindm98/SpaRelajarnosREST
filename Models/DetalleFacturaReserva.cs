@@ -9,21 +9,18 @@
 
 namespace SpaRelajarnosREST.Models
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
     public partial class DetalleFacturaReserva
     {
         public int Codigo { get; set; }
-        public Nullable<int> Numero { get; set; }
-        public Nullable<int> Cantidad { get; set; }
-        public Nullable<decimal> ValorUnitario { get; set; }
-        public Nullable<int> IdServicio { get; set; }
-
-        [JsonIgnore]
+        public int Numero { get; set; }
+        public int Cantidad { get; set; }
+        public decimal ValorUnitario { get; set; }
+        public int IdServicio { get; set; }
+    
         public virtual Servicio Servicio { get; set; }
-        [JsonIgnore]
         public virtual FacturaReserva FacturaReserva { get; set; }
     }
 }

@@ -19,22 +19,17 @@ namespace SpaRelajarnosREST.Models
         public Servicio()
         {
             this.DetalleFacturaReservas = new HashSet<DetalleFacturaReserva>();
-            this.PromocionServicios = new HashSet<PromocionServicio>();
         }
     
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<decimal> Precio { get; set; }
-        public Nullable<int> DuracionMinutos { get; set; }
-        public Nullable<int> IdTipoServicio { get; set; }
+        public decimal Precio { get; set; }
+        public int IdTipoServicio { get; set; }
 
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleFacturaReserva> DetalleFacturaReservas { get; set; }
-        [JsonIgnore]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PromocionServicio> PromocionServicios { get; set; }
         [JsonIgnore]
         public virtual TipoServicio TipoServicio { get; set; }
     }

@@ -22,7 +22,7 @@ namespace SpaRelajarnosREST.Models
         }
     
         public int Id { get; set; }
-        public Nullable<int> IdEmpleado { get; set; }
+        public int IdEmpleado { get; set; }
         public string UserName { get; set; }
         public string Clave { get; set; }
         public string Salt { get; set; }

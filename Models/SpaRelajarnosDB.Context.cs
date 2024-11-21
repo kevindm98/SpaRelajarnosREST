@@ -31,16 +31,12 @@ namespace SpaRelajarnosREST.Models
         public virtual DbSet<DetalleFacturaProducto> DetalleFacturaProductoes { get; set; }
         public virtual DbSet<DetalleFacturaReserva> DetalleFacturaReservas { get; set; }
         public virtual DbSet<Empleado> Empleadoes { get; set; }
-        public virtual DbSet<Especialidad> Especialidads { get; set; }
-        public virtual DbSet<EspecialidadEmpleado> EspecialidadEmpleadoes { get; set; }
         public virtual DbSet<Estado> Estadoes { get; set; }
         public virtual DbSet<FacturaProducto> FacturaProductoes { get; set; }
         public virtual DbSet<FacturaReserva> FacturaReservas { get; set; }
         public virtual DbSet<MetodoPago> MetodoPagoes { get; set; }
         public virtual DbSet<Perfil> Perfils { get; set; }
         public virtual DbSet<Producto> Productoes { get; set; }
-        public virtual DbSet<Promocion> Promocions { get; set; }
-        public virtual DbSet<PromocionServicio> PromocionServicios { get; set; }
         public virtual DbSet<Reserva> Reservas { get; set; }
         public virtual DbSet<Sede> Sedes { get; set; }
         public virtual DbSet<Servicio> Servicios { get; set; }

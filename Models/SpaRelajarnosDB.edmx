@@ -10,105 +10,90 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Ciudad">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="20" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Documento" Type="varchar" MaxLength="20" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="Apellido" Type="varchar" MaxLength="50" />
-          <Property Name="Telefono" Type="int" />
-          <Property Name="Correo" Type="varchar" MaxLength="50" />
-          <Property Name="Direccion" Type="varchar" MaxLength="100" />
-          <Property Name="FechaRegistro" Type="date" />
+          <Property Name="Documento" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="int" Nullable="false" />
+          <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaRegistro" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="DetalleFacturaProducto">
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="int" Nullable="false" />
-          <Property Name="Numero" Type="int" />
-          <Property Name="Cantidad" Type="int" />
-          <Property Name="ValorUnitario" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="IdProducto" Type="int" />
+          <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Numero" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="ValorUnitario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IdProducto" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DetalleFacturaReserva">
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="int" Nullable="false" />
-          <Property Name="Numero" Type="int" />
-          <Property Name="Cantidad" Type="int" />
-          <Property Name="ValorUnitario" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="IdServicio" Type="int" />
+          <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Numero" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="ValorUnitario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IdServicio" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Empleado">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Documento" Type="varchar" MaxLength="20" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="Apellido" Type="varchar" MaxLength="50" />
-          <Property Name="Telefono" Type="int" />
-          <Property Name="Correo" Type="varchar" MaxLength="50" />
-          <Property Name="Direccion" Type="varchar" MaxLength="100" />
-          <Property Name="FechaContratacion" Type="date" />
-          <Property Name="Salario" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="IdCargo" Type="int" />
-          <Property Name="IdSede" Type="int" />
-        </EntityType>
-        <EntityType Name="Especialidad">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="EspecialidadEmpleado">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdEspecialidad" Type="int" />
-          <Property Name="IdEmpleado" Type="int" />
+          <Property Name="Documento" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="int" Nullable="false" />
+          <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaContratacion" Type="date" Nullable="false" />
+          <Property Name="Salario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IdCargo" Type="int" Nullable="false" />
+          <Property Name="IdSede" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Estado">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="20" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="FacturaProducto">
           <Key>
             <PropertyRef Name="Numero" />
           </Key>
           <Property Name="Numero" Type="int" Nullable="false" />
-          <Property Name="Fecha" Type="date" />
-          <Property Name="IdMetodoPago" Type="int" />
-          <Property Name="IdCliente" Type="int" />
-          <Property Name="IdEmpleado" Type="int" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="IdMetodoPago" Type="int" Nullable="false" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="IdEmpleado" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="FacturaReserva">
           <Key>
             <PropertyRef Name="Numero" />
           </Key>
           <Property Name="Numero" Type="int" Nullable="false" />
-          <Property Name="Fecha" Type="date" />
-          <Property Name="IdMetodoPago" Type="int" />
-          <Property Name="IdCliente" Type="int" />
-          <Property Name="IdEmpleado" Type="int" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="IdMetodoPago" Type="int" Nullable="false" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="IdEmpleado" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="MetodoPago">
           <Key>
@@ -122,103 +107,83 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="20" />
-          <Property Name="PaginaNavegar" Type="varchar" MaxLength="20" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="PaginaNavegar" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="20" />
-          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="IdTipoProducto" Type="int" />
-        </EntityType>
-        <EntityType Name="Promocion">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="20" />
-          <Property Name="Descuento" Type="int" />
-          <Property Name="FechaInicio" Type="date" />
-          <Property Name="FechaFinal" Type="date" />
-        </EntityType>
-        <EntityType Name="PromocionServicio">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdPromocion" Type="int" />
-          <Property Name="IdServicio" Type="int" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IdTipoProducto" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Reserva">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Fecha" Type="date" />
-          <Property Name="Hora" Type="time" Precision="7" />
-          <Property Name="Duracion" Type="int" />
-          <Property Name="IdSede" Type="int" />
-          <Property Name="IdFacturaReserva" Type="int" />
-          <Property Name="IdEstado" Type="int" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
+          <Property Name="IdSede" Type="int" Nullable="false" />
+          <Property Name="IdFacturaReserva" Type="int" Nullable="false" />
+          <Property Name="IdEstado" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Sede">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="20" />
-          <Property Name="Direccion" Type="varchar" MaxLength="100" />
-          <Property Name="IdCiudad" Type="int" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdCiudad" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Servicio">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="Descripcion" Type="varchar" MaxLength="200" />
-          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="DuracionMinutos" Type="int" />
-          <Property Name="IdTipoServicio" Type="int" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IdTipoServicio" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TipoProducto">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="20" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="TipoServicio">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdEmpleado" Type="int" />
-          <Property Name="UserName" Type="varchar" MaxLength="20" />
-          <Property Name="Clave" Type="nvarchar(max)" />
-          <Property Name="Salt" Type="nvarchar(max)" />
+          <Property Name="IdEmpleado" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Clave" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Salt" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuario_Perfil">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdUsuario" Type="int" />
-          <Property Name="IdPerfil" Type="int" />
-          <Property Name="Activo" Type="bit" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="IdPerfil" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
         </EntityType>
-        <Association Name="FK__DetalleFa__IdPro__71D1E811">
-          <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
+        <Association Name="FK__DetalleFa__IdPro__66603565">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="DetalleFacturaProducto" Type="Self.DetalleFacturaProducto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Producto">
@@ -229,8 +194,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetalleFa__IdSer__5EBF139D">
-          <End Role="Servicio" Type="Self.Servicio" Multiplicity="0..1" />
+        <Association Name="FK__DetalleFa__IdSer__59063A47">
+          <End Role="Servicio" Type="Self.Servicio" Multiplicity="1" />
           <End Role="DetalleFacturaReserva" Type="Self.DetalleFacturaReserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Servicio">
@@ -241,8 +206,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetalleFa__Numer__5DCAEF64">
-          <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="0..1" />
+        <Association Name="FK__DetalleFa__Numer__5812160E">
+          <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="1" />
           <End Role="DetalleFacturaReserva" Type="Self.DetalleFacturaReserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FacturaReserva">
@@ -253,8 +218,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetalleFa__Numer__70DDC3D8">
-          <End Role="FacturaProducto" Type="Self.FacturaProducto" Multiplicity="0..1" />
+        <Association Name="FK__DetalleFa__Numer__656C112C">
+          <End Role="FacturaProducto" Type="Self.FacturaProducto" Multiplicity="1" />
           <End Role="DetalleFacturaProducto" Type="Self.DetalleFacturaProducto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FacturaProducto">
@@ -266,7 +231,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Empleado__IdCarg__4222D4EF">
-          <End Role="Cargo" Type="Self.Cargo" Multiplicity="0..1" />
+          <End Role="Cargo" Type="Self.Cargo" Multiplicity="1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cargo">
@@ -278,7 +243,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Empleado__IdSede__4316F928">
-          <End Role="Sede" Type="Self.Sede" Multiplicity="0..1" />
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sede">
@@ -289,32 +254,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Especiali__IdEmp__48CFD27E">
-          <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
-          <End Role="EspecialidadEmpleado" Type="Self.EspecialidadEmpleado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleado">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EspecialidadEmpleado">
-              <PropertyRef Name="IdEmpleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Especiali__IdEsp__47DBAE45">
-          <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="0..1" />
-          <End Role="EspecialidadEmpleado" Type="Self.EspecialidadEmpleado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Especialidad">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EspecialidadEmpleado">
-              <PropertyRef Name="IdEspecialidad" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__FacturaPr__IdCli__6D0D32F4">
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+        <Association Name="FK__FacturaPr__IdCli__619B8048">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="FacturaProducto" Type="Self.FacturaProducto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cliente">
@@ -325,8 +266,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FacturaPr__IdEmp__6E01572D">
-          <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+        <Association Name="FK__FacturaPr__IdEmp__628FA481">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="FacturaProducto" Type="Self.FacturaProducto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empleado">
@@ -337,8 +278,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FacturaPr__IdMet__6C190EBB">
-          <End Role="MetodoPago" Type="Self.MetodoPago" Multiplicity="0..1" />
+        <Association Name="FK__FacturaPr__IdMet__60A75C0F">
+          <End Role="MetodoPago" Type="Self.MetodoPago" Multiplicity="1" />
           <End Role="FacturaProducto" Type="Self.FacturaProducto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MetodoPago">
@@ -349,8 +290,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FacturaRe__IdCli__5535A963">
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+        <Association Name="FK__FacturaRe__IdCli__4F7CD00D">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cliente">
@@ -361,8 +302,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FacturaRe__IdEmp__5629CD9C">
-          <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+        <Association Name="FK__FacturaRe__IdEmp__5070F446">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empleado">
@@ -373,8 +314,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FacturaRe__IdMet__5441852A">
-          <End Role="MetodoPago" Type="Self.MetodoPago" Multiplicity="0..1" />
+        <Association Name="FK__FacturaRe__IdMet__4E88ABD4">
+          <End Role="MetodoPago" Type="Self.MetodoPago" Multiplicity="1" />
           <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MetodoPago">
@@ -385,8 +326,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Producto__IdTipo__6383C8BA">
-          <End Role="TipoProducto" Type="Self.TipoProducto" Multiplicity="0..1" />
+        <Association Name="FK__Producto__IdTipo__5DCAEF64">
+          <End Role="TipoProducto" Type="Self.TipoProducto" Multiplicity="1" />
           <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoProducto">
@@ -397,32 +338,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Promocion__IdPro__68487DD7">
-          <End Role="Promocion" Type="Self.Promocion" Multiplicity="0..1" />
-          <End Role="PromocionServicio" Type="Self.PromocionServicio" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Promocion">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PromocionServicio">
-              <PropertyRef Name="IdPromocion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Promocion__IdSer__693CA210">
-          <End Role="Servicio" Type="Self.Servicio" Multiplicity="0..1" />
-          <End Role="PromocionServicio" Type="Self.PromocionServicio" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Servicio">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PromocionServicio">
-              <PropertyRef Name="IdServicio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Reserva__IdEstad__5AEE82B9">
-          <End Role="Estado" Type="Self.Estado" Multiplicity="0..1" />
+        <Association Name="FK__Reserva__IdEstad__5535A963">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
           <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Estado">
@@ -433,8 +350,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reserva__IdFactu__59FA5E80">
-          <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="0..1" />
+        <Association Name="FK__Reserva__IdFactu__5441852A">
+          <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="1" />
           <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FacturaReserva">
@@ -445,8 +362,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reserva__IdSede__59063A47">
-          <End Role="Sede" Type="Self.Sede" Multiplicity="0..1" />
+        <Association Name="FK__Reserva__IdSede__534D60F1">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
           <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sede">
@@ -458,7 +375,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Sede__IdCiudad__3E52440B">
-          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="0..1" />
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
           <End Role="Sede" Type="Self.Sede" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Ciudad">
@@ -469,8 +386,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Servicio__IdTipo__4F7CD00D">
-          <End Role="TipoServicio" Type="Self.TipoServicio" Multiplicity="0..1" />
+        <Association Name="FK__Servicio__IdTipo__49C3F6B7">
+          <End Role="TipoServicio" Type="Self.TipoServicio" Multiplicity="1" />
           <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoServicio">
@@ -481,8 +398,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__IdEmple__74AE54BC">
-          <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+        <Association Name="FK__Usuario__IdEmple__693CA210">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empleado">
@@ -493,8 +410,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario_P__IdPer__7A672E12">
-          <End Role="Perfil" Type="Self.Perfil" Multiplicity="0..1" />
+        <Association Name="FK__Usuario_P__IdPer__6EF57B66">
+          <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
           <End Role="Usuario_Perfil" Type="Self.Usuario_Perfil" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Perfil">
@@ -505,8 +422,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario_P__IdUsu__797309D9">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+        <Association Name="FK__Usuario_P__IdUsu__6E01572D">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Usuario_Perfil" Type="Self.Usuario_Perfil" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -524,16 +441,12 @@
           <EntitySet Name="DetalleFacturaProducto" EntityType="Self.DetalleFacturaProducto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DetalleFacturaReserva" EntityType="Self.DetalleFacturaReserva" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Especialidad" EntityType="Self.Especialidad" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EspecialidadEmpleado" EntityType="Self.EspecialidadEmpleado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FacturaProducto" EntityType="Self.FacturaProducto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FacturaReserva" EntityType="Self.FacturaReserva" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MetodoPago" EntityType="Self.MetodoPago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Perfil" EntityType="Self.Perfil" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Promocion" EntityType="Self.Promocion" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PromocionServicio" EntityType="Self.PromocionServicio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reserva" EntityType="Self.Reserva" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sede" EntityType="Self.Sede" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
@@ -541,19 +454,19 @@
           <EntitySet Name="TipoServicio" EntityType="Self.TipoServicio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario_Perfil" EntityType="Self.Usuario_Perfil" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__DetalleFa__IdPro__71D1E811" Association="Self.FK__DetalleFa__IdPro__71D1E811">
+          <AssociationSet Name="FK__DetalleFa__IdPro__66603565" Association="Self.FK__DetalleFa__IdPro__66603565">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="DetalleFacturaProducto" EntitySet="DetalleFacturaProducto" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetalleFa__IdSer__5EBF139D" Association="Self.FK__DetalleFa__IdSer__5EBF139D">
+          <AssociationSet Name="FK__DetalleFa__IdSer__59063A47" Association="Self.FK__DetalleFa__IdSer__59063A47">
             <End Role="Servicio" EntitySet="Servicio" />
             <End Role="DetalleFacturaReserva" EntitySet="DetalleFacturaReserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetalleFa__Numer__5DCAEF64" Association="Self.FK__DetalleFa__Numer__5DCAEF64">
+          <AssociationSet Name="FK__DetalleFa__Numer__5812160E" Association="Self.FK__DetalleFa__Numer__5812160E">
             <End Role="FacturaReserva" EntitySet="FacturaReserva" />
             <End Role="DetalleFacturaReserva" EntitySet="DetalleFacturaReserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetalleFa__Numer__70DDC3D8" Association="Self.FK__DetalleFa__Numer__70DDC3D8">
+          <AssociationSet Name="FK__DetalleFa__Numer__656C112C" Association="Self.FK__DetalleFa__Numer__656C112C">
             <End Role="FacturaProducto" EntitySet="FacturaProducto" />
             <End Role="DetalleFacturaProducto" EntitySet="DetalleFacturaProducto" />
           </AssociationSet>
@@ -565,59 +478,43 @@
             <End Role="Sede" EntitySet="Sede" />
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
-          <AssociationSet Name="FK__Especiali__IdEmp__48CFD27E" Association="Self.FK__Especiali__IdEmp__48CFD27E">
-            <End Role="Empleado" EntitySet="Empleado" />
-            <End Role="EspecialidadEmpleado" EntitySet="EspecialidadEmpleado" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Especiali__IdEsp__47DBAE45" Association="Self.FK__Especiali__IdEsp__47DBAE45">
-            <End Role="Especialidad" EntitySet="Especialidad" />
-            <End Role="EspecialidadEmpleado" EntitySet="EspecialidadEmpleado" />
-          </AssociationSet>
-          <AssociationSet Name="FK__FacturaPr__IdCli__6D0D32F4" Association="Self.FK__FacturaPr__IdCli__6D0D32F4">
+          <AssociationSet Name="FK__FacturaPr__IdCli__619B8048" Association="Self.FK__FacturaPr__IdCli__619B8048">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="FacturaProducto" EntitySet="FacturaProducto" />
           </AssociationSet>
-          <AssociationSet Name="FK__FacturaPr__IdEmp__6E01572D" Association="Self.FK__FacturaPr__IdEmp__6E01572D">
+          <AssociationSet Name="FK__FacturaPr__IdEmp__628FA481" Association="Self.FK__FacturaPr__IdEmp__628FA481">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="FacturaProducto" EntitySet="FacturaProducto" />
           </AssociationSet>
-          <AssociationSet Name="FK__FacturaPr__IdMet__6C190EBB" Association="Self.FK__FacturaPr__IdMet__6C190EBB">
+          <AssociationSet Name="FK__FacturaPr__IdMet__60A75C0F" Association="Self.FK__FacturaPr__IdMet__60A75C0F">
             <End Role="MetodoPago" EntitySet="MetodoPago" />
             <End Role="FacturaProducto" EntitySet="FacturaProducto" />
           </AssociationSet>
-          <AssociationSet Name="FK__FacturaRe__IdCli__5535A963" Association="Self.FK__FacturaRe__IdCli__5535A963">
+          <AssociationSet Name="FK__FacturaRe__IdCli__4F7CD00D" Association="Self.FK__FacturaRe__IdCli__4F7CD00D">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="FacturaReserva" EntitySet="FacturaReserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__FacturaRe__IdEmp__5629CD9C" Association="Self.FK__FacturaRe__IdEmp__5629CD9C">
+          <AssociationSet Name="FK__FacturaRe__IdEmp__5070F446" Association="Self.FK__FacturaRe__IdEmp__5070F446">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="FacturaReserva" EntitySet="FacturaReserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__FacturaRe__IdMet__5441852A" Association="Self.FK__FacturaRe__IdMet__5441852A">
+          <AssociationSet Name="FK__FacturaRe__IdMet__4E88ABD4" Association="Self.FK__FacturaRe__IdMet__4E88ABD4">
             <End Role="MetodoPago" EntitySet="MetodoPago" />
             <End Role="FacturaReserva" EntitySet="FacturaReserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__Producto__IdTipo__6383C8BA" Association="Self.FK__Producto__IdTipo__6383C8BA">
+          <AssociationSet Name="FK__Producto__IdTipo__5DCAEF64" Association="Self.FK__Producto__IdTipo__5DCAEF64">
             <End Role="TipoProducto" EntitySet="TipoProducto" />
             <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__Promocion__IdPro__68487DD7" Association="Self.FK__Promocion__IdPro__68487DD7">
-            <End Role="Promocion" EntitySet="Promocion" />
-            <End Role="PromocionServicio" EntitySet="PromocionServicio" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Promocion__IdSer__693CA210" Association="Self.FK__Promocion__IdSer__693CA210">
-            <End Role="Servicio" EntitySet="Servicio" />
-            <End Role="PromocionServicio" EntitySet="PromocionServicio" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Reserva__IdEstad__5AEE82B9" Association="Self.FK__Reserva__IdEstad__5AEE82B9">
+          <AssociationSet Name="FK__Reserva__IdEstad__5535A963" Association="Self.FK__Reserva__IdEstad__5535A963">
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Reserva" EntitySet="Reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reserva__IdFactu__59FA5E80" Association="Self.FK__Reserva__IdFactu__59FA5E80">
+          <AssociationSet Name="FK__Reserva__IdFactu__5441852A" Association="Self.FK__Reserva__IdFactu__5441852A">
             <End Role="FacturaReserva" EntitySet="FacturaReserva" />
             <End Role="Reserva" EntitySet="Reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reserva__IdSede__59063A47" Association="Self.FK__Reserva__IdSede__59063A47">
+          <AssociationSet Name="FK__Reserva__IdSede__534D60F1" Association="Self.FK__Reserva__IdSede__534D60F1">
             <End Role="Sede" EntitySet="Sede" />
             <End Role="Reserva" EntitySet="Reserva" />
           </AssociationSet>
@@ -625,19 +522,19 @@
             <End Role="Ciudad" EntitySet="Ciudad" />
             <End Role="Sede" EntitySet="Sede" />
           </AssociationSet>
-          <AssociationSet Name="FK__Servicio__IdTipo__4F7CD00D" Association="Self.FK__Servicio__IdTipo__4F7CD00D">
+          <AssociationSet Name="FK__Servicio__IdTipo__49C3F6B7" Association="Self.FK__Servicio__IdTipo__49C3F6B7">
             <End Role="TipoServicio" EntitySet="TipoServicio" />
             <End Role="Servicio" EntitySet="Servicio" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__IdEmple__74AE54BC" Association="Self.FK__Usuario__IdEmple__74AE54BC">
+          <AssociationSet Name="FK__Usuario__IdEmple__693CA210" Association="Self.FK__Usuario__IdEmple__693CA210">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario_P__IdPer__7A672E12" Association="Self.FK__Usuario_P__IdPer__7A672E12">
+          <AssociationSet Name="FK__Usuario_P__IdPer__6EF57B66" Association="Self.FK__Usuario_P__IdPer__6EF57B66">
             <End Role="Perfil" EntitySet="Perfil" />
             <End Role="Usuario_Perfil" EntitySet="Usuario_Perfil" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario_P__IdUsu__797309D9" Association="Self.FK__Usuario_P__IdUsu__797309D9">
+          <AssociationSet Name="FK__Usuario_P__IdUsu__6E01572D" Association="Self.FK__Usuario_P__IdUsu__6E01572D">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Usuario_Perfil" EntitySet="Usuario_Perfil" />
           </AssociationSet>
@@ -652,7 +549,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Empleadoes" Relationship="Self.FK__Empleado__IdCarg__4222D4EF" FromRole="Cargo" ToRole="Empleado" />
         </EntityType>
         <EntityType Name="Ciudad">
@@ -660,7 +557,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Sedes" Relationship="Self.FK__Sede__IdCiudad__3E52440B" FromRole="Ciudad" ToRole="Sede" />
         </EntityType>
         <EntityType Name="Cliente">
@@ -668,116 +565,97 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Documento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Telefono" Type="Int32" />
-          <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="FechaRegistro" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="FacturaProductoes" Relationship="Self.FK__FacturaPr__IdCli__6D0D32F4" FromRole="Cliente" ToRole="FacturaProducto" />
-          <NavigationProperty Name="FacturaReservas" Relationship="Self.FK__FacturaRe__IdCli__5535A963" FromRole="Cliente" ToRole="FacturaReserva" />
+          <Property Name="Documento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="Int32" Nullable="false" />
+          <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="FacturaProductoes" Relationship="Self.FK__FacturaPr__IdCli__619B8048" FromRole="Cliente" ToRole="FacturaProducto" />
+          <NavigationProperty Name="FacturaReservas" Relationship="Self.FK__FacturaRe__IdCli__4F7CD00D" FromRole="Cliente" ToRole="FacturaReserva" />
         </EntityType>
         <EntityType Name="DetalleFacturaProducto">
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="Int32" Nullable="false" />
-          <Property Name="Numero" Type="Int32" />
-          <Property Name="Cantidad" Type="Int32" />
-          <Property Name="ValorUnitario" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="IdProducto" Type="Int32" />
-          <NavigationProperty Name="Producto" Relationship="Self.FK__DetalleFa__IdPro__71D1E811" FromRole="DetalleFacturaProducto" ToRole="Producto" />
-          <NavigationProperty Name="FacturaProducto" Relationship="Self.FK__DetalleFa__Numer__70DDC3D8" FromRole="DetalleFacturaProducto" ToRole="FacturaProducto" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="ValorUnitario" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IdProducto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__DetalleFa__IdPro__66603565" FromRole="DetalleFacturaProducto" ToRole="Producto" />
+          <NavigationProperty Name="FacturaProducto" Relationship="Self.FK__DetalleFa__Numer__656C112C" FromRole="DetalleFacturaProducto" ToRole="FacturaProducto" />
         </EntityType>
         <EntityType Name="DetalleFacturaReserva">
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="Int32" Nullable="false" />
-          <Property Name="Numero" Type="Int32" />
-          <Property Name="Cantidad" Type="Int32" />
-          <Property Name="ValorUnitario" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="IdServicio" Type="Int32" />
-          <NavigationProperty Name="Servicio" Relationship="Self.FK__DetalleFa__IdSer__5EBF139D" FromRole="DetalleFacturaReserva" ToRole="Servicio" />
-          <NavigationProperty Name="FacturaReserva" Relationship="Self.FK__DetalleFa__Numer__5DCAEF64" FromRole="DetalleFacturaReserva" ToRole="FacturaReserva" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="ValorUnitario" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IdServicio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Servicio" Relationship="Self.FK__DetalleFa__IdSer__59063A47" FromRole="DetalleFacturaReserva" ToRole="Servicio" />
+          <NavigationProperty Name="FacturaReserva" Relationship="Self.FK__DetalleFa__Numer__5812160E" FromRole="DetalleFacturaReserva" ToRole="FacturaReserva" />
         </EntityType>
         <EntityType Name="Empleado">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Documento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Telefono" Type="Int32" />
-          <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="FechaContratacion" Type="DateTime" Precision="0" />
-          <Property Name="Salario" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="IdCargo" Type="Int32" />
-          <Property Name="IdSede" Type="Int32" />
+          <Property Name="Documento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="Int32" Nullable="false" />
+          <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaContratacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Salario" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IdCargo" Type="Int32" Nullable="false" />
+          <Property Name="IdSede" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cargo" Relationship="Self.FK__Empleado__IdCarg__4222D4EF" FromRole="Empleado" ToRole="Cargo" />
           <NavigationProperty Name="Sede" Relationship="Self.FK__Empleado__IdSede__4316F928" FromRole="Empleado" ToRole="Sede" />
-          <NavigationProperty Name="EspecialidadEmpleadoes" Relationship="Self.FK__Especiali__IdEmp__48CFD27E" FromRole="Empleado" ToRole="EspecialidadEmpleado" />
-          <NavigationProperty Name="FacturaProductoes" Relationship="Self.FK__FacturaPr__IdEmp__6E01572D" FromRole="Empleado" ToRole="FacturaProducto" />
-          <NavigationProperty Name="FacturaReservas" Relationship="Self.FK__FacturaRe__IdEmp__5629CD9C" FromRole="Empleado" ToRole="FacturaReserva" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuario__IdEmple__74AE54BC" FromRole="Empleado" ToRole="Usuario" />
-        </EntityType>
-        <EntityType Name="Especialidad">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="EspecialidadEmpleadoes" Relationship="Self.FK__Especiali__IdEsp__47DBAE45" FromRole="Especialidad" ToRole="EspecialidadEmpleado" />
-        </EntityType>
-        <EntityType Name="EspecialidadEmpleado">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdEspecialidad" Type="Int32" />
-          <Property Name="IdEmpleado" Type="Int32" />
-          <NavigationProperty Name="Empleado" Relationship="Self.FK__Especiali__IdEmp__48CFD27E" FromRole="EspecialidadEmpleado" ToRole="Empleado" />
-          <NavigationProperty Name="Especialidad" Relationship="Self.FK__Especiali__IdEsp__47DBAE45" FromRole="EspecialidadEmpleado" ToRole="Especialidad" />
+          <NavigationProperty Name="FacturaProductoes" Relationship="Self.FK__FacturaPr__IdEmp__628FA481" FromRole="Empleado" ToRole="FacturaProducto" />
+          <NavigationProperty Name="FacturaReservas" Relationship="Self.FK__FacturaRe__IdEmp__5070F446" FromRole="Empleado" ToRole="FacturaReserva" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuario__IdEmple__693CA210" FromRole="Empleado" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Estado">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Reservas" Relationship="Self.FK__Reserva__IdEstad__5AEE82B9" FromRole="Estado" ToRole="Reserva" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Reservas" Relationship="Self.FK__Reserva__IdEstad__5535A963" FromRole="Estado" ToRole="Reserva" />
         </EntityType>
         <EntityType Name="FacturaProducto">
           <Key>
             <PropertyRef Name="Numero" />
           </Key>
           <Property Name="Numero" Type="Int32" Nullable="false" />
-          <Property Name="Fecha" Type="DateTime" Precision="0" />
-          <Property Name="IdMetodoPago" Type="Int32" />
-          <Property Name="IdCliente" Type="Int32" />
-          <Property Name="IdEmpleado" Type="Int32" />
-          <NavigationProperty Name="Cliente" Relationship="Self.FK__FacturaPr__IdCli__6D0D32F4" FromRole="FacturaProducto" ToRole="Cliente" />
-          <NavigationProperty Name="DetalleFacturaProductoes" Relationship="Self.FK__DetalleFa__Numer__70DDC3D8" FromRole="FacturaProducto" ToRole="DetalleFacturaProducto" />
-          <NavigationProperty Name="Empleado" Relationship="Self.FK__FacturaPr__IdEmp__6E01572D" FromRole="FacturaProducto" ToRole="Empleado" />
-          <NavigationProperty Name="MetodoPago" Relationship="Self.FK__FacturaPr__IdMet__6C190EBB" FromRole="FacturaProducto" ToRole="MetodoPago" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdMetodoPago" Type="Int32" Nullable="false" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK__FacturaPr__IdCli__619B8048" FromRole="FacturaProducto" ToRole="Cliente" />
+          <NavigationProperty Name="DetalleFacturaProductoes" Relationship="Self.FK__DetalleFa__Numer__656C112C" FromRole="FacturaProducto" ToRole="DetalleFacturaProducto" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK__FacturaPr__IdEmp__628FA481" FromRole="FacturaProducto" ToRole="Empleado" />
+          <NavigationProperty Name="MetodoPago" Relationship="Self.FK__FacturaPr__IdMet__60A75C0F" FromRole="FacturaProducto" ToRole="MetodoPago" />
         </EntityType>
         <EntityType Name="FacturaReserva">
           <Key>
             <PropertyRef Name="Numero" />
           </Key>
           <Property Name="Numero" Type="Int32" Nullable="false" />
-          <Property Name="Fecha" Type="DateTime" Precision="0" />
-          <Property Name="IdMetodoPago" Type="Int32" />
-          <Property Name="IdCliente" Type="Int32" />
-          <Property Name="IdEmpleado" Type="Int32" />
-          <NavigationProperty Name="Cliente" Relationship="Self.FK__FacturaRe__IdCli__5535A963" FromRole="FacturaReserva" ToRole="Cliente" />
-          <NavigationProperty Name="DetalleFacturaReservas" Relationship="Self.FK__DetalleFa__Numer__5DCAEF64" FromRole="FacturaReserva" ToRole="DetalleFacturaReserva" />
-          <NavigationProperty Name="Empleado" Relationship="Self.FK__FacturaRe__IdEmp__5629CD9C" FromRole="FacturaReserva" ToRole="Empleado" />
-          <NavigationProperty Name="MetodoPago" Relationship="Self.FK__FacturaRe__IdMet__5441852A" FromRole="FacturaReserva" ToRole="MetodoPago" />
-          <NavigationProperty Name="Reservas" Relationship="Self.FK__Reserva__IdFactu__59FA5E80" FromRole="FacturaReserva" ToRole="Reserva" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdMetodoPago" Type="Int32" Nullable="false" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK__FacturaRe__IdCli__4F7CD00D" FromRole="FacturaReserva" ToRole="Cliente" />
+          <NavigationProperty Name="DetalleFacturaReservas" Relationship="Self.FK__DetalleFa__Numer__5812160E" FromRole="FacturaReserva" ToRole="DetalleFacturaReserva" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK__FacturaRe__IdEmp__5070F446" FromRole="FacturaReserva" ToRole="Empleado" />
+          <NavigationProperty Name="MetodoPago" Relationship="Self.FK__FacturaRe__IdMet__4E88ABD4" FromRole="FacturaReserva" ToRole="MetodoPago" />
+          <NavigationProperty Name="Reservas" Relationship="Self.FK__Reserva__IdFactu__5441852A" FromRole="FacturaReserva" ToRole="Reserva" />
         </EntityType>
         <EntityType Name="MetodoPago">
           <Key>
@@ -785,132 +663,108 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="FacturaProductoes" Relationship="Self.FK__FacturaPr__IdMet__6C190EBB" FromRole="MetodoPago" ToRole="FacturaProducto" />
-          <NavigationProperty Name="FacturaReservas" Relationship="Self.FK__FacturaRe__IdMet__5441852A" FromRole="MetodoPago" ToRole="FacturaReserva" />
+          <NavigationProperty Name="FacturaProductoes" Relationship="Self.FK__FacturaPr__IdMet__60A75C0F" FromRole="MetodoPago" ToRole="FacturaProducto" />
+          <NavigationProperty Name="FacturaReservas" Relationship="Self.FK__FacturaRe__IdMet__4E88ABD4" FromRole="MetodoPago" ToRole="FacturaReserva" />
         </EntityType>
         <EntityType Name="Perfil">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="PaginaNavegar" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Usuario_Perfil" Relationship="Self.FK__Usuario_P__IdPer__7A672E12" FromRole="Perfil" ToRole="Usuario_Perfil" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PaginaNavegar" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Usuario_Perfil" Relationship="Self.FK__Usuario_P__IdPer__6EF57B66" FromRole="Perfil" ToRole="Usuario_Perfil" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="IdTipoProducto" Type="Int32" />
-          <NavigationProperty Name="DetalleFacturaProductoes" Relationship="Self.FK__DetalleFa__IdPro__71D1E811" FromRole="Producto" ToRole="DetalleFacturaProducto" />
-          <NavigationProperty Name="TipoProducto" Relationship="Self.FK__Producto__IdTipo__6383C8BA" FromRole="Producto" ToRole="TipoProducto" />
-        </EntityType>
-        <EntityType Name="Promocion">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Descuento" Type="Int32" />
-          <Property Name="FechaInicio" Type="DateTime" Precision="0" />
-          <Property Name="FechaFinal" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="PromocionServicios" Relationship="Self.FK__Promocion__IdPro__68487DD7" FromRole="Promocion" ToRole="PromocionServicio" />
-        </EntityType>
-        <EntityType Name="PromocionServicio">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPromocion" Type="Int32" />
-          <Property Name="IdServicio" Type="Int32" />
-          <NavigationProperty Name="Promocion" Relationship="Self.FK__Promocion__IdPro__68487DD7" FromRole="PromocionServicio" ToRole="Promocion" />
-          <NavigationProperty Name="Servicio" Relationship="Self.FK__Promocion__IdSer__693CA210" FromRole="PromocionServicio" ToRole="Servicio" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IdTipoProducto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DetalleFacturaProductoes" Relationship="Self.FK__DetalleFa__IdPro__66603565" FromRole="Producto" ToRole="DetalleFacturaProducto" />
+          <NavigationProperty Name="TipoProducto" Relationship="Self.FK__Producto__IdTipo__5DCAEF64" FromRole="Producto" ToRole="TipoProducto" />
         </EntityType>
         <EntityType Name="Reserva">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fecha" Type="DateTime" Precision="0" />
-          <Property Name="Hora" Type="Time" Precision="7" />
-          <Property Name="Duracion" Type="Int32" />
-          <Property Name="IdSede" Type="Int32" />
-          <Property Name="IdFacturaReserva" Type="Int32" />
-          <Property Name="IdEstado" Type="Int32" />
-          <NavigationProperty Name="Estado" Relationship="Self.FK__Reserva__IdEstad__5AEE82B9" FromRole="Reserva" ToRole="Estado" />
-          <NavigationProperty Name="FacturaReserva" Relationship="Self.FK__Reserva__IdFactu__59FA5E80" FromRole="Reserva" ToRole="FacturaReserva" />
-          <NavigationProperty Name="Sede" Relationship="Self.FK__Reserva__IdSede__59063A47" FromRole="Reserva" ToRole="Sede" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Hora" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="IdSede" Type="Int32" Nullable="false" />
+          <Property Name="IdFacturaReserva" Type="Int32" Nullable="false" />
+          <Property Name="IdEstado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK__Reserva__IdEstad__5535A963" FromRole="Reserva" ToRole="Estado" />
+          <NavigationProperty Name="FacturaReserva" Relationship="Self.FK__Reserva__IdFactu__5441852A" FromRole="Reserva" ToRole="FacturaReserva" />
+          <NavigationProperty Name="Sede" Relationship="Self.FK__Reserva__IdSede__534D60F1" FromRole="Reserva" ToRole="Sede" />
         </EntityType>
         <EntityType Name="Sede">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="IdCiudad" Type="Int32" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdCiudad" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Ciudad" Relationship="Self.FK__Sede__IdCiudad__3E52440B" FromRole="Sede" ToRole="Ciudad" />
           <NavigationProperty Name="Empleadoes" Relationship="Self.FK__Empleado__IdSede__4316F928" FromRole="Sede" ToRole="Empleado" />
-          <NavigationProperty Name="Reservas" Relationship="Self.FK__Reserva__IdSede__59063A47" FromRole="Sede" ToRole="Reserva" />
+          <NavigationProperty Name="Reservas" Relationship="Self.FK__Reserva__IdSede__534D60F1" FromRole="Sede" ToRole="Reserva" />
         </EntityType>
         <EntityType Name="Servicio">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="DuracionMinutos" Type="Int32" />
-          <Property Name="IdTipoServicio" Type="Int32" />
-          <NavigationProperty Name="DetalleFacturaReservas" Relationship="Self.FK__DetalleFa__IdSer__5EBF139D" FromRole="Servicio" ToRole="DetalleFacturaReserva" />
-          <NavigationProperty Name="PromocionServicios" Relationship="Self.FK__Promocion__IdSer__693CA210" FromRole="Servicio" ToRole="PromocionServicio" />
-          <NavigationProperty Name="TipoServicio" Relationship="Self.FK__Servicio__IdTipo__4F7CD00D" FromRole="Servicio" ToRole="TipoServicio" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IdTipoServicio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DetalleFacturaReservas" Relationship="Self.FK__DetalleFa__IdSer__59063A47" FromRole="Servicio" ToRole="DetalleFacturaReserva" />
+          <NavigationProperty Name="TipoServicio" Relationship="Self.FK__Servicio__IdTipo__49C3F6B7" FromRole="Servicio" ToRole="TipoServicio" />
         </EntityType>
         <EntityType Name="TipoProducto">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Productoes" Relationship="Self.FK__Producto__IdTipo__6383C8BA" FromRole="TipoProducto" ToRole="Producto" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Productoes" Relationship="Self.FK__Producto__IdTipo__5DCAEF64" FromRole="TipoProducto" ToRole="Producto" />
         </EntityType>
         <EntityType Name="TipoServicio">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Servicios" Relationship="Self.FK__Servicio__IdTipo__4F7CD00D" FromRole="TipoServicio" ToRole="Servicio" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Servicios" Relationship="Self.FK__Servicio__IdTipo__49C3F6B7" FromRole="TipoServicio" ToRole="Servicio" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdEmpleado" Type="Int32" />
-          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Clave" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Salt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Empleado" Relationship="Self.FK__Usuario__IdEmple__74AE54BC" FromRole="Usuario" ToRole="Empleado" />
-          <NavigationProperty Name="Usuario_Perfil" Relationship="Self.FK__Usuario_P__IdUsu__797309D9" FromRole="Usuario" ToRole="Usuario_Perfil" />
+          <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Clave" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Salt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK__Usuario__IdEmple__693CA210" FromRole="Usuario" ToRole="Empleado" />
+          <NavigationProperty Name="Usuario_Perfil" Relationship="Self.FK__Usuario_P__IdUsu__6E01572D" FromRole="Usuario" ToRole="Usuario_Perfil" />
         </EntityType>
         <EntityType Name="Usuario_Perfil">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdUsuario" Type="Int32" />
-          <Property Name="IdPerfil" Type="Int32" />
-          <Property Name="Activo" Type="Boolean" />
-          <NavigationProperty Name="Perfil" Relationship="Self.FK__Usuario_P__IdPer__7A672E12" FromRole="Usuario_Perfil" ToRole="Perfil" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario_P__IdUsu__797309D9" FromRole="Usuario_Perfil" ToRole="Usuario" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+          <Property Name="IdPerfil" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Perfil" Relationship="Self.FK__Usuario_P__IdPer__6EF57B66" FromRole="Usuario_Perfil" ToRole="Perfil" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario_P__IdUsu__6E01572D" FromRole="Usuario_Perfil" ToRole="Usuario" />
         </EntityType>
         <Association Name="FK__Empleado__IdCarg__4222D4EF">
-          <End Role="Cargo" Type="Self.Cargo" Multiplicity="0..1" />
+          <End Role="Cargo" Type="Self.Cargo" Multiplicity="1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cargo">
@@ -922,7 +776,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Sede__IdCiudad__3E52440B">
-          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="0..1" />
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
           <End Role="Sede" Type="Self.Sede" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Ciudad">
@@ -933,8 +787,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FacturaPr__IdCli__6D0D32F4">
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+        <Association Name="FK__FacturaPr__IdCli__619B8048">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="FacturaProducto" Type="Self.FacturaProducto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cliente">
@@ -945,8 +799,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FacturaRe__IdCli__5535A963">
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+        <Association Name="FK__FacturaRe__IdCli__4F7CD00D">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cliente">
@@ -957,8 +811,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetalleFa__IdPro__71D1E811">
-          <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
+        <Association Name="FK__DetalleFa__IdPro__66603565">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="DetalleFacturaProducto" Type="Self.DetalleFacturaProducto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Producto">
@@ -969,8 +823,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetalleFa__Numer__70DDC3D8">
-          <End Role="FacturaProducto" Type="Self.FacturaProducto" Multiplicity="0..1" />
+        <Association Name="FK__DetalleFa__Numer__656C112C">
+          <End Role="FacturaProducto" Type="Self.FacturaProducto" Multiplicity="1" />
           <End Role="DetalleFacturaProducto" Type="Self.DetalleFacturaProducto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FacturaProducto">
@@ -981,8 +835,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetalleFa__IdSer__5EBF139D">
-          <End Role="Servicio" Type="Self.Servicio" Multiplicity="0..1" />
+        <Association Name="FK__DetalleFa__IdSer__59063A47">
+          <End Role="Servicio" Type="Self.Servicio" Multiplicity="1" />
           <End Role="DetalleFacturaReserva" Type="Self.DetalleFacturaReserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Servicio">
@@ -993,8 +847,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetalleFa__Numer__5DCAEF64">
-          <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="0..1" />
+        <Association Name="FK__DetalleFa__Numer__5812160E">
+          <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="1" />
           <End Role="DetalleFacturaReserva" Type="Self.DetalleFacturaReserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FacturaReserva">
@@ -1006,7 +860,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Empleado__IdSede__4316F928">
-          <End Role="Sede" Type="Self.Sede" Multiplicity="0..1" />
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sede">
@@ -1017,20 +871,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Especiali__IdEmp__48CFD27E">
-          <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
-          <End Role="EspecialidadEmpleado" Type="Self.EspecialidadEmpleado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleado">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EspecialidadEmpleado">
-              <PropertyRef Name="IdEmpleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__FacturaPr__IdEmp__6E01572D">
-          <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+        <Association Name="FK__FacturaPr__IdEmp__628FA481">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="FacturaProducto" Type="Self.FacturaProducto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empleado">
@@ -1041,8 +883,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FacturaRe__IdEmp__5629CD9C">
-          <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+        <Association Name="FK__FacturaRe__IdEmp__5070F446">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empleado">
@@ -1053,8 +895,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__IdEmple__74AE54BC">
-          <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+        <Association Name="FK__Usuario__IdEmple__693CA210">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empleado">
@@ -1065,20 +907,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Especiali__IdEsp__47DBAE45">
-          <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="0..1" />
-          <End Role="EspecialidadEmpleado" Type="Self.EspecialidadEmpleado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Especialidad">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EspecialidadEmpleado">
-              <PropertyRef Name="IdEspecialidad" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Reserva__IdEstad__5AEE82B9">
-          <End Role="Estado" Type="Self.Estado" Multiplicity="0..1" />
+        <Association Name="FK__Reserva__IdEstad__5535A963">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
           <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Estado">
@@ -1089,8 +919,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FacturaPr__IdMet__6C190EBB">
-          <End Role="MetodoPago" Type="Self.MetodoPago" Multiplicity="0..1" />
+        <Association Name="FK__FacturaPr__IdMet__60A75C0F">
+          <End Role="MetodoPago" Type="Self.MetodoPago" Multiplicity="1" />
           <End Role="FacturaProducto" Type="Self.FacturaProducto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MetodoPago">
@@ -1101,8 +931,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FacturaRe__IdMet__5441852A">
-          <End Role="MetodoPago" Type="Self.MetodoPago" Multiplicity="0..1" />
+        <Association Name="FK__FacturaRe__IdMet__4E88ABD4">
+          <End Role="MetodoPago" Type="Self.MetodoPago" Multiplicity="1" />
           <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MetodoPago">
@@ -1113,8 +943,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reserva__IdFactu__59FA5E80">
-          <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="0..1" />
+        <Association Name="FK__Reserva__IdFactu__5441852A">
+          <End Role="FacturaReserva" Type="Self.FacturaReserva" Multiplicity="1" />
           <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FacturaReserva">
@@ -1125,8 +955,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario_P__IdPer__7A672E12">
-          <End Role="Perfil" Type="Self.Perfil" Multiplicity="0..1" />
+        <Association Name="FK__Usuario_P__IdPer__6EF57B66">
+          <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
           <End Role="Usuario_Perfil" Type="Self.Usuario_Perfil" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Perfil">
@@ -1137,8 +967,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Producto__IdTipo__6383C8BA">
-          <End Role="TipoProducto" Type="Self.TipoProducto" Multiplicity="0..1" />
+        <Association Name="FK__Producto__IdTipo__5DCAEF64">
+          <End Role="TipoProducto" Type="Self.TipoProducto" Multiplicity="1" />
           <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoProducto">
@@ -1149,32 +979,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Promocion__IdPro__68487DD7">
-          <End Role="Promocion" Type="Self.Promocion" Multiplicity="0..1" />
-          <End Role="PromocionServicio" Type="Self.PromocionServicio" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Promocion">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PromocionServicio">
-              <PropertyRef Name="IdPromocion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Promocion__IdSer__693CA210">
-          <End Role="Servicio" Type="Self.Servicio" Multiplicity="0..1" />
-          <End Role="PromocionServicio" Type="Self.PromocionServicio" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Servicio">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PromocionServicio">
-              <PropertyRef Name="IdServicio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Reserva__IdSede__59063A47">
-          <End Role="Sede" Type="Self.Sede" Multiplicity="0..1" />
+        <Association Name="FK__Reserva__IdSede__534D60F1">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
           <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sede">
@@ -1185,8 +991,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Servicio__IdTipo__4F7CD00D">
-          <End Role="TipoServicio" Type="Self.TipoServicio" Multiplicity="0..1" />
+        <Association Name="FK__Servicio__IdTipo__49C3F6B7">
+          <End Role="TipoServicio" Type="Self.TipoServicio" Multiplicity="1" />
           <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoServicio">
@@ -1197,8 +1003,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario_P__IdUsu__797309D9">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+        <Association Name="FK__Usuario_P__IdUsu__6E01572D">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Usuario_Perfil" Type="Self.Usuario_Perfil" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -1216,16 +1022,12 @@
           <EntitySet Name="DetalleFacturaProductoes" EntityType="Self.DetalleFacturaProducto" />
           <EntitySet Name="DetalleFacturaReservas" EntityType="Self.DetalleFacturaReserva" />
           <EntitySet Name="Empleadoes" EntityType="Self.Empleado" />
-          <EntitySet Name="Especialidads" EntityType="Self.Especialidad" />
-          <EntitySet Name="EspecialidadEmpleadoes" EntityType="Self.EspecialidadEmpleado" />
           <EntitySet Name="Estadoes" EntityType="Self.Estado" />
           <EntitySet Name="FacturaProductoes" EntityType="Self.FacturaProducto" />
           <EntitySet Name="FacturaReservas" EntityType="Self.FacturaReserva" />
           <EntitySet Name="MetodoPagoes" EntityType="Self.MetodoPago" />
           <EntitySet Name="Perfils" EntityType="Self.Perfil" />
           <EntitySet Name="Productoes" EntityType="Self.Producto" />
-          <EntitySet Name="Promocions" EntityType="Self.Promocion" />
-          <EntitySet Name="PromocionServicios" EntityType="Self.PromocionServicio" />
           <EntitySet Name="Reservas" EntityType="Self.Reserva" />
           <EntitySet Name="Sedes" EntityType="Self.Sede" />
           <EntitySet Name="Servicios" EntityType="Self.Servicio" />
@@ -1241,27 +1043,27 @@
             <End Role="Ciudad" EntitySet="Ciudads" />
             <End Role="Sede" EntitySet="Sedes" />
           </AssociationSet>
-          <AssociationSet Name="FK__FacturaPr__IdCli__6D0D32F4" Association="Self.FK__FacturaPr__IdCli__6D0D32F4">
+          <AssociationSet Name="FK__FacturaPr__IdCli__619B8048" Association="Self.FK__FacturaPr__IdCli__619B8048">
             <End Role="Cliente" EntitySet="Clientes" />
             <End Role="FacturaProducto" EntitySet="FacturaProductoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__FacturaRe__IdCli__5535A963" Association="Self.FK__FacturaRe__IdCli__5535A963">
+          <AssociationSet Name="FK__FacturaRe__IdCli__4F7CD00D" Association="Self.FK__FacturaRe__IdCli__4F7CD00D">
             <End Role="Cliente" EntitySet="Clientes" />
             <End Role="FacturaReserva" EntitySet="FacturaReservas" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetalleFa__IdPro__71D1E811" Association="Self.FK__DetalleFa__IdPro__71D1E811">
+          <AssociationSet Name="FK__DetalleFa__IdPro__66603565" Association="Self.FK__DetalleFa__IdPro__66603565">
             <End Role="Producto" EntitySet="Productoes" />
             <End Role="DetalleFacturaProducto" EntitySet="DetalleFacturaProductoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetalleFa__Numer__70DDC3D8" Association="Self.FK__DetalleFa__Numer__70DDC3D8">
+          <AssociationSet Name="FK__DetalleFa__Numer__656C112C" Association="Self.FK__DetalleFa__Numer__656C112C">
             <End Role="FacturaProducto" EntitySet="FacturaProductoes" />
             <End Role="DetalleFacturaProducto" EntitySet="DetalleFacturaProductoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetalleFa__IdSer__5EBF139D" Association="Self.FK__DetalleFa__IdSer__5EBF139D">
+          <AssociationSet Name="FK__DetalleFa__IdSer__59063A47" Association="Self.FK__DetalleFa__IdSer__59063A47">
             <End Role="Servicio" EntitySet="Servicios" />
             <End Role="DetalleFacturaReserva" EntitySet="DetalleFacturaReservas" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetalleFa__Numer__5DCAEF64" Association="Self.FK__DetalleFa__Numer__5DCAEF64">
+          <AssociationSet Name="FK__DetalleFa__Numer__5812160E" Association="Self.FK__DetalleFa__Numer__5812160E">
             <End Role="FacturaReserva" EntitySet="FacturaReservas" />
             <End Role="DetalleFacturaReserva" EntitySet="DetalleFacturaReservas" />
           </AssociationSet>
@@ -1269,67 +1071,51 @@
             <End Role="Sede" EntitySet="Sedes" />
             <End Role="Empleado" EntitySet="Empleadoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Especiali__IdEmp__48CFD27E" Association="Self.FK__Especiali__IdEmp__48CFD27E">
-            <End Role="Empleado" EntitySet="Empleadoes" />
-            <End Role="EspecialidadEmpleado" EntitySet="EspecialidadEmpleadoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__FacturaPr__IdEmp__6E01572D" Association="Self.FK__FacturaPr__IdEmp__6E01572D">
+          <AssociationSet Name="FK__FacturaPr__IdEmp__628FA481" Association="Self.FK__FacturaPr__IdEmp__628FA481">
             <End Role="Empleado" EntitySet="Empleadoes" />
             <End Role="FacturaProducto" EntitySet="FacturaProductoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__FacturaRe__IdEmp__5629CD9C" Association="Self.FK__FacturaRe__IdEmp__5629CD9C">
+          <AssociationSet Name="FK__FacturaRe__IdEmp__5070F446" Association="Self.FK__FacturaRe__IdEmp__5070F446">
             <End Role="Empleado" EntitySet="Empleadoes" />
             <End Role="FacturaReserva" EntitySet="FacturaReservas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__IdEmple__74AE54BC" Association="Self.FK__Usuario__IdEmple__74AE54BC">
+          <AssociationSet Name="FK__Usuario__IdEmple__693CA210" Association="Self.FK__Usuario__IdEmple__693CA210">
             <End Role="Empleado" EntitySet="Empleadoes" />
             <End Role="Usuario" EntitySet="Usuarios" />
           </AssociationSet>
-          <AssociationSet Name="FK__Especiali__IdEsp__47DBAE45" Association="Self.FK__Especiali__IdEsp__47DBAE45">
-            <End Role="Especialidad" EntitySet="Especialidads" />
-            <End Role="EspecialidadEmpleado" EntitySet="EspecialidadEmpleadoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Reserva__IdEstad__5AEE82B9" Association="Self.FK__Reserva__IdEstad__5AEE82B9">
+          <AssociationSet Name="FK__Reserva__IdEstad__5535A963" Association="Self.FK__Reserva__IdEstad__5535A963">
             <End Role="Estado" EntitySet="Estadoes" />
             <End Role="Reserva" EntitySet="Reservas" />
           </AssociationSet>
-          <AssociationSet Name="FK__FacturaPr__IdMet__6C190EBB" Association="Self.FK__FacturaPr__IdMet__6C190EBB">
+          <AssociationSet Name="FK__FacturaPr__IdMet__60A75C0F" Association="Self.FK__FacturaPr__IdMet__60A75C0F">
             <End Role="MetodoPago" EntitySet="MetodoPagoes" />
             <End Role="FacturaProducto" EntitySet="FacturaProductoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__FacturaRe__IdMet__5441852A" Association="Self.FK__FacturaRe__IdMet__5441852A">
+          <AssociationSet Name="FK__FacturaRe__IdMet__4E88ABD4" Association="Self.FK__FacturaRe__IdMet__4E88ABD4">
             <End Role="MetodoPago" EntitySet="MetodoPagoes" />
             <End Role="FacturaReserva" EntitySet="FacturaReservas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reserva__IdFactu__59FA5E80" Association="Self.FK__Reserva__IdFactu__59FA5E80">
+          <AssociationSet Name="FK__Reserva__IdFactu__5441852A" Association="Self.FK__Reserva__IdFactu__5441852A">
             <End Role="FacturaReserva" EntitySet="FacturaReservas" />
             <End Role="Reserva" EntitySet="Reservas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario_P__IdPer__7A672E12" Association="Self.FK__Usuario_P__IdPer__7A672E12">
+          <AssociationSet Name="FK__Usuario_P__IdPer__6EF57B66" Association="Self.FK__Usuario_P__IdPer__6EF57B66">
             <End Role="Perfil" EntitySet="Perfils" />
             <End Role="Usuario_Perfil" EntitySet="Usuario_Perfil" />
           </AssociationSet>
-          <AssociationSet Name="FK__Producto__IdTipo__6383C8BA" Association="Self.FK__Producto__IdTipo__6383C8BA">
+          <AssociationSet Name="FK__Producto__IdTipo__5DCAEF64" Association="Self.FK__Producto__IdTipo__5DCAEF64">
             <End Role="TipoProducto" EntitySet="TipoProductoes" />
             <End Role="Producto" EntitySet="Productoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Promocion__IdPro__68487DD7" Association="Self.FK__Promocion__IdPro__68487DD7">
-            <End Role="Promocion" EntitySet="Promocions" />
-            <End Role="PromocionServicio" EntitySet="PromocionServicios" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Promocion__IdSer__693CA210" Association="Self.FK__Promocion__IdSer__693CA210">
-            <End Role="Servicio" EntitySet="Servicios" />
-            <End Role="PromocionServicio" EntitySet="PromocionServicios" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Reserva__IdSede__59063A47" Association="Self.FK__Reserva__IdSede__59063A47">
+          <AssociationSet Name="FK__Reserva__IdSede__534D60F1" Association="Self.FK__Reserva__IdSede__534D60F1">
             <End Role="Sede" EntitySet="Sedes" />
             <End Role="Reserva" EntitySet="Reservas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Servicio__IdTipo__4F7CD00D" Association="Self.FK__Servicio__IdTipo__4F7CD00D">
+          <AssociationSet Name="FK__Servicio__IdTipo__49C3F6B7" Association="Self.FK__Servicio__IdTipo__49C3F6B7">
             <End Role="TipoServicio" EntitySet="TipoServicios" />
             <End Role="Servicio" EntitySet="Servicios" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario_P__IdUsu__797309D9" Association="Self.FK__Usuario_P__IdUsu__797309D9">
+          <AssociationSet Name="FK__Usuario_P__IdUsu__6E01572D" Association="Self.FK__Usuario_P__IdUsu__6E01572D">
             <End Role="Usuario" EntitySet="Usuarios" />
             <End Role="Usuario_Perfil" EntitySet="Usuario_Perfil" />
           </AssociationSet>
@@ -1409,23 +1195,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Especialidads">
-            <EntityTypeMapping TypeName="SpaRelajarnosModel.Especialidad">
-              <MappingFragment StoreEntitySet="Especialidad">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EspecialidadEmpleadoes">
-            <EntityTypeMapping TypeName="SpaRelajarnosModel.EspecialidadEmpleado">
-              <MappingFragment StoreEntitySet="EspecialidadEmpleado">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
-                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Estadoes">
             <EntityTypeMapping TypeName="SpaRelajarnosModel.Estado">
               <MappingFragment StoreEntitySet="Estado">
@@ -1483,33 +1252,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Promocions">
-            <EntityTypeMapping TypeName="SpaRelajarnosModel.Promocion">
-              <MappingFragment StoreEntitySet="Promocion">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
-                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
-                <ScalarProperty Name="FechaFinal" ColumnName="FechaFinal" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PromocionServicios">
-            <EntityTypeMapping TypeName="SpaRelajarnosModel.PromocionServicio">
-              <MappingFragment StoreEntitySet="PromocionServicio">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="IdPromocion" ColumnName="IdPromocion" />
-                <ScalarProperty Name="IdServicio" ColumnName="IdServicio" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Reservas">
             <EntityTypeMapping TypeName="SpaRelajarnosModel.Reserva">
               <MappingFragment StoreEntitySet="Reserva">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Hora" ColumnName="Hora" />
-                <ScalarProperty Name="Duracion" ColumnName="Duracion" />
                 <ScalarProperty Name="IdSede" ColumnName="IdSede" />
                 <ScalarProperty Name="IdFacturaReserva" ColumnName="IdFacturaReserva" />
                 <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
@@ -1533,7 +1281,6 @@
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
-                <ScalarProperty Name="DuracionMinutos" ColumnName="DuracionMinutos" />
                 <ScalarProperty Name="IdTipoServicio" ColumnName="IdTipoServicio" />
               </MappingFragment>
             </EntityTypeMapping>

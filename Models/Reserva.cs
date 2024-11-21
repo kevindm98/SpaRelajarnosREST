@@ -16,12 +16,11 @@ namespace SpaRelajarnosREST.Models
     public partial class Reserva
     {
         public int Id { get; set; }
-        public Nullable<System.DateTime> Fecha { get; set; }
-        public Nullable<System.TimeSpan> Hora { get; set; }
-        public Nullable<int> Duracion { get; set; }
-        public Nullable<int> IdSede { get; set; }
-        public Nullable<int> IdFacturaReserva { get; set; }
-        public Nullable<int> IdEstado { get; set; }
+        public System.DateTime Fecha { get; set; }
+        public System.TimeSpan Hora { get; set; }
+        public int IdSede { get; set; }
+        public int IdFacturaReserva { get; set; }
+        public int IdEstado { get; set; }
 
         [JsonIgnore]
         public virtual Estado Estado { get; set; }
