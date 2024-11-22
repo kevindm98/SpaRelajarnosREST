@@ -58,6 +58,7 @@ namespace SpaRelajarnosREST.Clases
                    {
                        Eliminar = "<img src=\"../Imagenes/Eliminar.png\" onclick=\"Eliminar(" + DR.Codigo + ", " + DR.Cantidad + ", " + DR.ValorUnitario + ")\"/>",
                        Tipo_Servicio = TS.Nombre,
+                       Codigo_Servicio = S.Id,
                        Servicio = S.Nombre,
                        Cantidad = DR.Cantidad,
                        Valor_Unitario = DR.ValorUnitario,
