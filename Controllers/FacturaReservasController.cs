@@ -23,39 +23,20 @@ namespace SpaRelajarnosREST.Controllers
             return Factura.GrabarFactura();
         }
 
-        //[HttpGet]
-        //[Route("Consultar")]
-        //public FacturaReserva Consultar(int id)
-        //{
-        //	clsFacturaReserva facturaReserva = new clsFacturaReserva();
-        //	return facturaReserva.Consultar(id);
-        //}
+        [HttpGet]
+        [Route("ListarServicios")]
+        public IQueryable ListarServicios(int NumeroFactura)
+        {
+            clsFacturaReserva Factura = new clsFacturaReserva();
+            return Factura.ListarServicios(NumeroFactura);
+        }
 
-        //[HttpPost]
-        //[Route("Insertar")]
-        //public string Insertar([FromBody] FacturaReserva FacturaReserva)
-        //{
-        //	clsFacturaReserva facturaReserva = new clsFacturaReserva();
-        //	facturaReserva.facturaReserva = FacturaReserva;
-        //	return facturaReserva.Insertar();
-        //}
-
-        //[HttpPut]
-        //[Route("Actualizar")]
-        //public string Actualizar([FromBody] FacturaReserva FacturaReserva)
-        //{
-        //	clsFacturaReserva facturaReserva = new clsFacturaReserva();
-        //	facturaReserva.facturaReserva = FacturaReserva;
-        //	return facturaReserva.Actualizar();
-        //}
-
-        //[HttpDelete]
-        //[Route("Eliminar")]
-        //public string Eliminar([FromBody] FacturaReserva FacturaReserva)
-        //{
-        //	clsFacturaReserva facturaReserva = new clsFacturaReserva();
-        //	facturaReserva.facturaReserva = FacturaReserva;
-        //	return facturaReserva.Eliminar();
-        //}
+        [HttpDelete]
+        [Route("Eliminar")]
+        public string Eliminar(int Codigo)
+        {
+            clsFacturaReserva Factura = new clsFacturaReserva();
+            return Factura.EliminarDetalle(Codigo);
+        }
     }
 }

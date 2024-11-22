@@ -92,8 +92,7 @@ namespace SpaRelajarnosREST.Clases
 					   Codigo = s.Id,
 					   Servicio = s.Nombre,
 					   Descripcion = s.Descripcion,
-					   Precio = s.Precio,
-					   Duracion_Servicio = s.DuracionMinutos
+					   Precio = s.Precio
 				   };
 		}
 		[AllowAnonymous]

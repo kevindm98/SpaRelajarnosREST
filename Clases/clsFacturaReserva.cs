@@ -45,5 +45,40 @@ namespace SpaRelajarnosREST.Clases
             return db.FacturaReservas.Select(f => f.Numero).DefaultIfEmpty(0).Max() + 1;
 
         }
+
+        public IQueryable ListarServicios(int NumeroFactura)
+        {
+            return from DR in db.Set<DetalleFacturaReserva>()
+                   join S in db.Set<Servicio>()
+                   on DR.IdServicio equals S.Id
+                   join TS in db.Set<TipoServicio>()
+                   on S.IdTipoServicio equals TS.Id
+                   where DR.Numero == NumeroFactura
+                   select new
+                   {
+                       Eliminar = "<img src=\"../Imagenes/Eliminar.png\" onclick=\"Elminar(" + DR.Codigo + ", " + DR.Cantidad + ", " + DR.ValorUnitario + ")\"/>",
+                       Tipo_Servicio = TS.Nombre,
+                       Servicio = S.Nombre,
+                       Cantidad = DR.Cantidad,
+                       Valor_Unitario = DR.ValorUnitario,
+                       Subtotal = DR.Cantidad * DR.ValorUnitario
+                   };
+
+        }
+
+        public string EliminarDetalle(int Codigo)
+        {
+            try
+            {
+                detalleFacturaReserva = db.DetalleFacturaReservas.FirstOrDefault(d => d.Codigo == Codigo);
+                db.DetalleFacturaReservas.Remove(detalleFacturaReserva);
+                db.SaveChanges();
+                return "Se eliminó el detalle";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
     }
 }
