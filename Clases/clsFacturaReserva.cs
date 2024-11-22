@@ -56,7 +56,7 @@ namespace SpaRelajarnosREST.Clases
                    where DR.Numero == NumeroFactura
                    select new
                    {
-                       Eliminar = "<img src=\"../Imagenes/Eliminar.png\" onclick=\"Elminar(" + DR.Codigo + ", " + DR.Cantidad + ", " + DR.ValorUnitario + ")\"/>",
+                       Eliminar = "<img src=\"../Imagenes/Eliminar.png\" onclick=\"Eliminar(" + DR.Codigo + ", " + DR.Cantidad + ", " + DR.ValorUnitario + ")\"/>",
                        Tipo_Servicio = TS.Nombre,
                        Servicio = S.Nombre,
                        Cantidad = DR.Cantidad,
