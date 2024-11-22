@@ -234,7 +234,6 @@
     <Compile Include="Clases\clsMetodoPago.cs" />
     <Compile Include="Clases\clsPerfil.cs" />
     <Compile Include="Clases\clsProducto.cs" />
-    <Compile Include="Clases\clsPromocion.cs" />
     <Compile Include="Clases\clsReserva.cs" />
     <Compile Include="Clases\clsSede.cs" />
     <Compile Include="Clases\clsServicio.cs" />
@@ -255,7 +254,6 @@
     <Compile Include="Controllers\MetodoPagosController.cs" />
     <Compile Include="Controllers\PerfilesController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
-    <Compile Include="Controllers\PromocionesController.cs" />
     <Compile Include="Controllers\ReservasController.cs" />
     <Compile Include="Controllers\SedesController.cs" />
     <Compile Include="Controllers\ServiciosController.cs" />
