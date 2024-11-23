@@ -23,7 +23,23 @@ namespace SpaRelajarnosREST.Controllers
 			return producto.Consultar(id);
 		}
 
-		[HttpPost]
+        [HttpGet]
+        [Route("LlenarTabla")]
+        public IQueryable LlenarTabla()
+        {
+            clsProducto producto = new clsProducto();
+            return producto.LlenarTabla();
+        }
+
+        [HttpGet]
+        [Route("ListarProductosXTipo")]
+        public IQueryable ListarProductosXTipo(int TipoProducto)
+        {
+            clsProducto producto = new clsProducto();
+            return producto.ListarProductosXTipo(TipoProducto);
+        }
+
+        [HttpPost]
 		[Route("Insertar")]
 		public string Insertar([FromBody] Producto Producto)
 		{

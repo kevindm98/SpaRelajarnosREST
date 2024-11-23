@@ -77,5 +77,36 @@ namespace SpaRelajarnosREST.Clases
 				return ex.Message;
 			}
 		}
-	}
+
+        public IQueryable LlenarTabla()
+        {
+            return from p in db.Set<Producto>()
+                   join tp in db.Set<TipoProducto>()
+                   on p.TipoProducto.Id equals tp.Id
+                   orderby p.Nombre, tp.Nombre
+                   select new
+                   {
+                       Cod_TipoServicio = tp.Id,
+                       Tipo_Servicio = tp.Nombre,
+                       Codigo = p.Id,
+                       Servicio = p.Nombre,
+                       Precio = p.Precio
+                   };
+        }
+
+        public IQueryable ListarProductosXTipo(int TipoProducto)
+        {
+            return from P in db.Set<Producto>()
+                   join TP in db.Set<TipoProducto>()
+                   on P.TipoProducto.Id equals TP.Id
+                   //Aca iría el where, si se requiere
+                   where TP.Id == TipoProducto
+                   orderby TP.Nombre, P.Nombre //Order by si se requiere
+                   select new //Finalmente, se presentan los campos que se van a mostrar
+                   {
+                       Codigo = P.Id + "|" + P.Precio,
+                       Nombre = P.Nombre
+                   };
+        }
+    }
 }

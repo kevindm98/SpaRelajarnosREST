@@ -95,11 +95,8 @@ namespace SpaRelajarnosREST.Clases
 					   Precio = s.Precio
 				   };
 		}
-		[AllowAnonymous]
         public IQueryable ListarServiciosXTipo(int TipoServicio)
         {
-            //En SQL la instrucción es SELECT - FROM - WHERE
-            //En linq la instrucción es FROM - WHERE - SELECT
             return from P in db.Set<Servicio>()
                    join TS in db.Set<TipoServicio>()
                    on P.TipoServicio.Id equals TS.Id
