@@ -49,3 +49,21 @@ go
 
 INSERT INTO Cliente VALUES ('123', 'Bobo', 'Longo', 300000000, 'bobo@longo.com', 'Sabaneta', '2024-11-17');
 go
+
+INSERT INTO Estado VALUES
+('En proceso'),
+('Completada'),
+('Cancelada');
+go
+
+INSERT INTO TipoProducto VALUES
+('Bebida'),
+('Cosmético'),
+('Cuidado personal');
+go
+
+INSERT INTO Producto VALUES
+('Té verde', 5000, 1),
+('Acetona', 8000, 2),
+('Corta uñas', 2000, 3);
+go
