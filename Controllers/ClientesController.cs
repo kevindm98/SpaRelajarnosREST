@@ -12,7 +12,7 @@ namespace SpaRelajarnosREST.Controllers
 {
 
 	[EnableCors(origins: "https://localhost:44306", headers: "*", methods: "*")]
-	[Authorize]
+	
 	[RoutePrefix("api/Clientes")]
 	public class ClientesController : ApiController
 	{
@@ -51,5 +51,12 @@ namespace SpaRelajarnosREST.Controllers
 			cliente.cliente = Cliente;
 			return cliente.Eliminar();
 		}
-	}
+        [HttpGet]
+        [Route("ListarClientes")]
+        public IQueryable ListarClientes()
+        {
+            clsCliente _cliente = new clsCliente();
+            return _cliente.ListarClientes();
+        }
+    }
 }

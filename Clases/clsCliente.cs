@@ -78,6 +78,21 @@ namespace SpaRelajarnosREST.Clases
 				return ex.Message;
 			}
 		}
+        public IQueryable ListarClientes()
+        {
+            return from E in db.Set<Cliente>()
+                   select new
+                   {
+                       Id = E.Id,
+					   Documento = E.Documento,
+                       Nombre = E.Nombre,
+                       Apellido = E.Apellido,
+                       Telefono = E.Telefono,
+                       Email = E.Correo,
+                       Direccion = E.Direccion,
+                       FechaRegistro = E.FechaRegistro
+                   };
+        }
 
-	}
+    }
 }

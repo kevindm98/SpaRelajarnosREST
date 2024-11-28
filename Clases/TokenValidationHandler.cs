@@ -67,7 +67,7 @@ namespace SpaRelajarnosREST.Clases
             {
                 statusCode = HttpStatusCode.Unauthorized;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 statusCode = HttpStatusCode.InternalServerError;
             }
