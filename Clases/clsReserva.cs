@@ -77,5 +77,32 @@ namespace SpaRelajarnosREST.Clases
 				return ex.Message;
 			}
 		}
-	}
+
+        public IQueryable LlenarTabla()
+        {
+            return from r in db.Set<Reserva>()
+                   join f in db.Set<FacturaReserva>()
+                   on r.IdFacturaReserva equals f.Numero
+                   join e in db.Set<Estado>()
+                   on r.IdEstado equals e.Id
+				   join c in db.Set<Cliente>()
+				   on f.IdCliente equals c.Id
+                   join s in db.Set<Sede>()
+                   on r.IdSede equals s.Id
+                   orderby r.Fecha
+                   select new
+                   {
+                       Id = r.Id,
+					   Cliente = c.Nombre,
+					   DocumentoCliente = c.Documento,
+					   Fecha = r.Fecha,
+					   Hora = r.Hora,
+					   Sede = s.Nombre,
+					   NumeroFactura = f.Numero,
+					   Estado = e.Nombre,
+					   
+                   };
+        }
+
+    }
 }

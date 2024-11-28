@@ -11,7 +11,8 @@ using System.Web.Http.Cors;
 namespace SpaRelajarnosREST.Controllers
 {
 	[EnableCors(origins: "https://localhost:44306", headers: "*", methods: "*")]
-	[RoutePrefix("api/Productos")]
+    [Authorize]
+    [RoutePrefix("api/Productos")]
 	public class ProductosController : ApiController
 	{
 
@@ -37,6 +38,14 @@ namespace SpaRelajarnosREST.Controllers
         {
             clsProducto producto = new clsProducto();
             return producto.ListarProductosXTipo(TipoProducto);
+        }
+
+        [HttpGet]
+        [Route("ListarProductos")]
+        public IQueryable ListarProductos()
+        {
+            clsProducto producto = new clsProducto();
+            return producto.ListarProductos();
         }
 
         [HttpPost]

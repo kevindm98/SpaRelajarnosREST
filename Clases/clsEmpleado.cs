@@ -18,10 +18,15 @@ namespace SpaRelajarnosREST.Clases
 
 		public Empleado Consultar(string documento)
 		{
-			return db.Empleadoes.FirstOrDefault(e => e.Documento == documento);
+			return db.Empleadoes.FirstOrDefault(e => e.Documento.Equals(documento));
 		}
 
-		public IQueryable ConsultarConCargo(string documento) 
+        public Empleado ConsultarXid(int Id)
+        {
+            return db.Empleadoes.FirstOrDefault(e => e.Id.Equals(Id));
+        }
+
+        public IQueryable ConsultarConCargo(string documento) 
 		{
 			return from E in db.Set<Empleado>()
 				   join C in db.Set<Cargo>()
@@ -68,13 +73,14 @@ namespace SpaRelajarnosREST.Clases
 
 		public string Actualizar()
 		{
-			Empleado _empleado = Consultar(empleado.Documento);
+			Empleado _empleado = ConsultarXid(empleado.Id);
 
 			try
 			{
 				if (_empleado != null)
 				{
-					db.Empleadoes.AddOrUpdate(empleado);
+					empleado.Id = _empleado.Id;
+					db.Entry(_empleado).CurrentValues.SetValues(empleado);
 					db.SaveChanges();
 					return "Empleado actualizado satisfactoriamente";
 				}
@@ -85,7 +91,7 @@ namespace SpaRelajarnosREST.Clases
 			}
 			catch (Exception ex)
 			{
-				return ex.Message;
+				return ex.ToString();
 			}
 		}
 

@@ -86,11 +86,20 @@ namespace SpaRelajarnosREST.Clases
                    orderby p.Nombre, tp.Nombre
                    select new
                    {
-                       Cod_TipoServicio = tp.Id,
-                       Tipo_Servicio = tp.Nombre,
-                       Codigo = p.Id,
-                       Servicio = p.Nombre,
+					   id = p.Id,
+                       TipoProducto = tp.Nombre,
+                       Producto = p.Nombre,
                        Precio = p.Precio
+                   };
+        }
+
+        public IQueryable ListarProductos()
+        {
+            return from p in db.Set<Producto>()         
+                   select new
+                   {
+					   ProductoId = p.Id,
+                       Producto = p.Nombre
                    };
         }
 

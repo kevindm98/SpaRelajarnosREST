@@ -11,7 +11,8 @@ using System.Web.Http.Cors;
 namespace SpaRelajarnosREST.Controllers
 {
 	[EnableCors(origins: "https://localhost:44306", headers: "*", methods: "*")]
-	[RoutePrefix("api/FacturaReservas")]
+    [Authorize]
+    [RoutePrefix("api/FacturaReservas")]
 	public class FacturaReservasController : ApiController
 	{
         [HttpPost]

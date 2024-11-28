@@ -11,7 +11,8 @@ using System.Web.Http.Cors;
 namespace SpaRelajarnosREST.Controllers
 {
 	[EnableCors(origins: "https://localhost:44306", headers: "*", methods: "*")]
-	[RoutePrefix("api/Reservas")]
+    [Authorize]
+    [RoutePrefix("api/Reservas")]
 	public class ReservasController : ApiController
 	{
 
@@ -22,8 +23,15 @@ namespace SpaRelajarnosREST.Controllers
 			clsReserva reserva = new clsReserva();
 			return reserva.Consultar(id);
 		}
+        [HttpGet]
+        [Route("LlenarTabla")]
+        public IQueryable LlenarTabla()
+        {
+            clsReserva reserva = new clsReserva();
+            return reserva.LlenarTabla();
+        }
 
-		[HttpPost]
+        [HttpPost]
 		[Route("Insertar")]
 		public string Insertar([FromBody] Reserva Reserva)
 		{
