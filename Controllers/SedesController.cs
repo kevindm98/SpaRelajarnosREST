@@ -11,7 +11,7 @@ using System.Web.Http.Cors;
 namespace SpaRelajarnosREST.Controllers
 {
 	[EnableCors(origins: "https://localhost:44306", headers: "*", methods: "*")]
-
+    [Authorize]
     [RoutePrefix("api/Sedes")]
 	public class SedesController : ApiController
 	{
